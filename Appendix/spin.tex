@@ -1,0 +1,235 @@
+\chapter{Spin}
+\label{app:spin}
+
+%___________________________________________________________
+\section{Spin operator}
+From eqs. we can extract the third component of the angular momentum\footnote{Here I am using the Weyl (chiral) basis for the Dirac matrices
+\begin{equation*}
+    \gamma^0 = \begin{pmatrix}
+        0 & I_2\\
+        I_2 & 0
+    \end{pmatrix} \, , 
+    \hspace{3mm}
+    \gamma^k = \begin{pmatrix}
+        0 & \sigma^k\\
+    -\sigma^{k} & 0
+    \end{pmatrix} \, ,
+    \hspace{3mm}
+    \gamma^5 = \begin{pmatrix}
+        -I_2 & 0\\
+        0 & I_2
+    \end{pmatrix}\,.
+\end{equation*}
+}
+\\
+\begin{equation}
+    S_z = \frac{1}{2} \sigma^{12} = \frac{i}{4} \commutator{\gamma^1}{\gamma^2} = \frac{i}{2} \gamma^1 \gamma^2 = 
+    \begin{pmatrix}
+        \frac{1}{2} \sigma_3 & 0 \\
+        0 & -\frac{1}{2} \sigma_3
+    \end{pmatrix} \,.
+\end{equation}
+\\
+In the inertial frame of a massive particle, this operator represents the intrinsic spin\footnote{We are assuming that the quantization axis corresponds to the z-axis of the reference frame in which the particle is at rest.}. Indeed, it can be used to label Dirac states according to their spin
+\\
+\begin{equation}
+    \begin{split}
+        S_z \, u_{\pm}(\vb*{0}) = \pm \frac{1}{2} u_{\pm}(\vb*{0})\, ,\\
+        S_z \, v_{\pm}(\vb*{0}) = \mp \frac{1}{2} v_{\pm}(\vb*{0})\, ,
+    \end{split}
+    \label{eq:spin_dirac}
+\end{equation}
+\\
+where $u_{\pm}$ and $v_{\pm}$ obey the equations
+\\
+\begin{equation}
+    \begin{split}
+        &(\slashed{p} - m) u_s(\vb{p}) = 0 \, ,\\
+        &(\slashed{p} + m) v_s(\vb{p}) = 0.
+    \end{split}
+    \label{eq:Dirac_eqs}
+\end{equation}
+\\
+We can define a set of projection operators that select the spin component $s$ along the direction individuated by the z-axis
+\\
+\begin{equation}
+    \begin{split}
+        &\frac{1}{2} \qty(1 + 2 s S_z) u_{s'}(\vb*{0}) = \delta_{ss'}u_{s'}(\vb*{0}) \\
+        &\frac{1}{2} \qty(1 - 2 s S_z) v_{s'}(\vb*{0}) = \delta_{ss'}v_{s'}(\vb*{0}) \,,
+    \end{split}
+    \label{eq:projectors}
+\end{equation}
+\\
+provided that $s,s' \in \qty{\pm 1}$. We need to boost these operators in a general reference frame. To do so, we can try to factor out the covariance form in the rest frame. Once expressed in that form, the relation holds in any reference frame, providing the general expression for \eqref{eq:projectors}. We start by noting that, in chiral basis, we can write
+\\
+\begin{equation}
+    S_z = \frac{i}{2}\gamma_1 \gamma_2 = -\frac{1}{2}\gamma_5 \gamma^3 \gamma^0 \,.
+\end{equation}
+\\
+In the rest frame $\slashed{p} = \gamma^0 m$ so that we can write $\gamma^0 = \slashed{p}/m$. Moreover, if we define the four-vector $ z^{\mu} = \qty(0, \hat{z})$ then $\gamma^3 = \slashed{z}$ and the spin operator reads
+\\
+\begin{equation}
+    S_z = -\frac{1}{2} \gamma_5 \slashed{z} \frac{\slashed{p}}{m} \,.
+\end{equation}  
+\\
+Note that, in any frame, we have
+\\
+\begin{equation}
+    z^2 = -1 \hspace{5mm} \textrm{and} \hspace{5mm} z \cdot p = 0 \,.
+\end{equation}
+\\
+We can now boost in any reference frame by replacing $\slashed{z}$ and $\slashed{p}$ with their values in the frame of interest. By introducing the spin-vector $s^{\mu} = s z^{\mu}$, the projectors in eqs. \eqref{eq:projectors} can finally be written, in any reference frame, as
+\\
+\begin{equation}
+    \begin{split}
+        &\frac{1}{2} \qty(1 - 2 \frac{1}{2m}\gamma_5 \slashed{s} \slashed{p}) u_{s'}(\vb*{p}) = \frac{1}{2} \qty(1 - \gamma_5  \slashed{s}) u_{s'}(\vb*{p}) = \delta_{ss'}u_{s'}(\vb*{p})\\
+        &\frac{1}{2} \qty(1 + 2 \frac{1}{2m}\gamma_5 \slashed{s} \slashed{p}) v_{s'}(\vb*{p}) = \frac{1}{2} \qty(1 - \gamma_5  \slashed{s}) v_{s'}(\vb*{p}) = \delta_{ss'}v_{s'}(\vb*{p}) \, ,
+    \end{split}
+    \label{eq:proj_adv}
+\end{equation}
+\\
+where in the second equality of both equations I used eqs. \eqref{eq:Dirac_eqs} to simplify $\slashed{p}$. Now we are able to the select a single spin component from the spin sums 
+\\
+\begin{equation}
+    \begin{split}
+        &\sum_{s=\pm} u_{s} \qty(\vb{p}) \bar{u}_{s} \qty(\vb{p}) = \qty(\slashed{p} + m)\\
+        &\sum_{s=\pm} v_{s} \qty(\vb{p}) \bar{v}_{s} \qty(\vb{p}) = \qty(\slashed{p} - m) \, ,
+    \end{split}
+\end{equation}
+\\
+by acting with the operators eqs. \eqref{eq:proj_adv}
+\\
+\begin{equation}
+    \begin{split}
+        &u_{s} \qty(\vb{p}) \bar{u}_{s} \qty(\vb{p}) = \frac{1}{2} \qty(1 - \gamma_5  \slashed{s}) \qty(\slashed{p} + m)\\
+        &v_{s} \qty(\vb{p}) \bar{v}_{s} \qty(\vb{p}) = \frac{1}{2} \qty(1 - \gamma_5  \slashed{s}) \qty(\slashed{p} - m) \,.
+    \end{split}
+    \label{eq:spin:projectors}
+\end{equation}
+
+\subsection*{Relativistic limit}
+Let us consider the three-momentum to be aligned in the z-direction, that is parallel to the spin quantization axis. In this reference frame we have 
+\\
+\begin{equation}
+    \begin{split}
+        &p^{\mu} = m \qty(\cosh \eta,0,0,\sinh \eta) \\
+        &z^{\mu} = \qty(\sinh \eta,0,0, -\cosh \eta)\,,
+    \end{split}
+    \label{eq:PeZ}
+\end{equation}
+\\
+where $\eta$ is the rapidity and the components of $z^{\mu}$ are obtained imposing $z \cdot p = 0$. In the relativistic limit ($\beta \rightarrow \pm 1$, $\eta \rightarrow \pm \infty$) the two four-vectors in \eqref{eq:PeZ} can be related as
+\\
+\begin{equation}
+    z^{\mu} = \frac{p^{\mu}}{m} + \mathcal{O}\qty(e^{-\eta})\,.  
+\end{equation}
+\\
+Thus, the spin-vector of a particle moving along its spin quantization axis and having helicity $\lambda \in \qty{\pm 1/2}$, in the relativistic limit reads 
+\\
+\begin{equation}
+    s^{\mu} = \frac{\lambda}{m} p^{\mu}
+    \label{eq:spin:spin_vector}
+\end{equation}
+
+\subsection*{Transverse polarisation}
+If the particle is transversely polarised, that is with spin perpendicular to the direction of motion, the parametrisation of the spin four-vector must satisfy
+%%
+\begin{equation}
+    z \cdot k = 0\,, \hspace{5mm} \T{and} \hspace{5mm} \hat{\vb{z}} \cdot \hat{\vb{k}} = 0 \,,
+\end{equation}
+%%
+where $k = (k^0,\, \qty|\vb{k}| \hat{\vb{k}})$ is the four-momentum of the particle. It is straightforward to show that 
+%%
+\begin{equation}
+    s = (0,\, \hat{\vb{s}}) 
+\end{equation}
+%%
+satisfies the two conditions, provided that $\hat{\vb{s}} \cdot \hat{\vb{k}} = 0$.
+%___________________________________________________________
+\section{Spin decomposition in QCD}
+The spin structure of a composite system, such as a nucleon, can be regarded as the sum of different contributions to the total. However, quantum field theory requires these contributions to be renormalization and scheme dependent, yet the total is not. For instance, the combination of dimensional regularization and modified minimal subtraction ($\overline{\T{MS}}$) is the most popular convention used in the literature, which introduces the dependence on the scale $\mu$.\par
+In a full general fashion, we can write the Angular Momentum (AM) operator in QCD as sum of individual sources 
+%%
+\begin{equation}
+    \vec{J}_{QCD} = \sum_{\alpha} \vec{J}_{\alpha}(\mu)\,.
+    \label{eq:spin_dec}
+\end{equation}
+%%
+Each source term must be regarded as the expectation value of the AM operator for that particular source, that is the quantum mechanical average of probability amplitudes. Even though \eqref{eq:spin_dec} may seem simple, the way to split the total AM can be cumbersome and not unique. Indeed, the decomposition must face the experimental measurability, since most of the quantities that enter the AM cannot be computed perturbatively. Moreover, being the spin an intrinsic property of a particle, one is led to seek for a description that is independent of a reference frame. Thus, the construction of helicity sum rules requires the understanding of the Lorentz transformation properties of $\vec{J}_{\alpha}$, given that the individual contributions may depend on the proton momentum or reference frame. In the following description, we assume $\hbar = 1$.\par
+Let us consider the rest frame of the proton with state $\ket{\vec{P} = 0, \vec{s}}$, whose angular momentum is quantized along $\vec{s}$. The projection of the angular momentum along the quantization direction must give the intrinsic spin of the proton, that is
+%%
+\begin{equation}
+    \vec{s} \cdot \vec{J} \ket{\vec{P} = 0, \vec{s}} = 1/2 \ket{\vec{P} = 0, \vec{s}} \,.
+    \label{eq:prot_state}
+\end{equation}
+%%
+In an arbitrary reference frame, \eqref{eq:prot_state} must involve a Lorentz invariant operator in the LHS
+%%
+\begin{equation}
+    (- W^{\mu}S_{\mu}) \ket{PS} = 1/2 \ket{PS}\,,
+    \label{eq:lor_inv_spin}
+\end{equation}
+%%
+where $P^{\mu}$ is the four-momentum of the proton in the chosen reference frame, $S^{\mu}$ is the spin polarization four-vector,
+%%
+\begin{equation}
+    S^{\mu} = (\gamma \vec{s} \cdot \beta, \, \vec{s} + (\gamma - 1) \vec{s} \cdot \hat{\beta} \hat{\beta})
+\end{equation}
+%%
+which satisfies $S^{\mu} S_{\mu} = -1$, $P^{\mu} S_{\mu} = 0$, and $W^{\mu}$ is the relativistic spin (Pauli-Lubanski) four-vector 
+%%
+\begin{equation}
+    \begin{split}
+        W^{\mu} & = -\frac{1}{2} \epsilon^{\mu \alpha \lambda \sigma} J_{\alpha \lambda} P_{\sigma}/M \\
+        & = \gamma \qty( \vec{J} \cdot \vec{\beta}, \, \vec{J} + \vec{K} \times \vec{\beta} )\,,
+    \end{split}
+\end{equation}
+%%
+where $J_{\alpha \lambda}$ is the Lorentz generator and $\vec{K}$ is the boost operator defined in terms of the components $J_{0i}$. It is easy to see that \eqref{eq:prot_state} is retrieved when the chosen frame is the rest frame of the proton, that is $\vec{\beta} = 0 \, \rightarrow \gamma = 1$. Expression \eqref{eq:lor_inv_spin} can be used to express the spin sum rule in any frame, 
+%%
+\begin{equation}
+    \bra{PS} (- W^{\mu}S_{\mu}) \ket{PS}  = \frac{1}{2} \,,
+\end{equation}
+%%
+by rewriting the left-hand side as the sums of expectation values. Note that the covariant spin in an arbitrary reference frame is not only related to the AM operator $\vec{J}$, but also to the boost operator $\vec{K}$.\par
+We can take the proton momentum to be aligned to the z-direction, $\vec{P}^{z} = (0,0,P^{z})$. Moreover, if we restrict our analysis to the longitudinal polarization $\vec{s} = (0,0,1)$, the scalar product in \eqref{eq:lor_inv_spin} becomes $-W^{\mu} S_{\mu} = J_{z}$, so that the total helicity can be expressed as
+%%
+\begin{equation}
+    \bra{P S_z} J^{z} \ket{P S_z} = \frac{1}{2} \,,
+\end{equation} 
+%%
+which is boost invariant along the z-direction. In order to work out a spin sum rule, we need an expression for AM operator in the framework of QCD. Using the Noether's theorem with the QCD lagrangian density, one can obtain the canonical AM expression 
+%%
+\begin{equation}
+    \vec{J}_{QCD} = \int d^3 x \qty [ \psi^{\dag}_{f} \frac{1}{2} \vec{\Sigma} \psi_{f} +  \psi^{\dag}_{f} \vec{x} \times (-i \vec{\partial}) \psi_{f} + \vec{E}_{a} \times \vec{A}_{a} + E^{i}_{a} (\vec{x} \times \vec{\partial}) A_{a}^i] \,,
+    \label{eq:can_spin_dec_qft}
+\end{equation}
+%%
+where $\psi_{f}$ is the quark field of flavour $f$, $\Sigma = \T{diag} (\vec{\sigma}, \vec{\sigma})$, with $\vec{\sigma}$ the Pauli matrices, $A_{a}^{i}$ are the gauge fields with colour index $a=1,\dots,8$, $E_{a}^{i}$ are the colour electric fields. In \eqref{eq:can_spin_dec_qft} the contraction of flavour and colour indices is implied. In a free-field theory, each term has a clear physical meaning. The first one is the quark spin, whereas corresponds to the quark orbital angular momentum (OAM). The third term takes into account the gluon spin and the last one the gluon OAM. However, only the first term is gauge-invariant under the general gauge transformation 
+%%
+\begin{equation}
+    A^{\mu} \rightarrow U(x) \qty( A^{\mu} + \frac{i}{g}\partial^{\mu} ) U^{\dag}(x)\,,
+\end{equation}
+%%
+even though the total must be gauge-invariant, up to a surface term at infinity. A different form of \eqref{eq:spin_dec_qft} was provided by Belifante [PSL 79 (1997) 610] 
+%%
+\begin{equation}
+    \vec{J}_{QCD} = \int d^3 x \qty [ \psi^{\dag}_{f} \frac{1}{2} \vec{\Sigma} \psi_{f} +  \psi^{\dag}_{f} \vec{x} \times \qty(-i \vec{\nabla} - g \vec{A}) \psi_{f} + \vec{x} \times \qty( \vec{E} \times \vec{B} ) ] \,,
+    \label{eq:spin_dec_qft}
+\end{equation}
+%%
+in which all terms are manifestly gauge-invariant. Here, the second term is regarded as the kinetic OAM, while the third term is the gluon AM (which contains the contribution from both angular and spin). The latter expression, together with \eqref{eq:spin_dec_qft}, can be used to write down the helicity sum rule
+%%
+\begin{equation}
+    \underbrace{\frac{1}{2} \Delta \Sigma (\mu) + L_{q}^{z} (\mu)}_{J_{q}} + J_{g} (\mu) = \frac{1}{2} \,,
+\end{equation}
+%%
+It can be shown [PRD 58 (1998) 056003] that the above sum rule is independent of the proton's momentum, that is the sources of the proton spin does not depend on the observer's reference frame so long as the helicity is a good quantum number.\par
+On the contrary, by choosing gauge and/or reference frame the canonical form \eqref{eq:can_spin_dec_qft} allows us to derive several helicity sum rules. One should keep in mind that such sum rules are not always relevant to experiment. Among many, the Infite Momentum Frame (IMF) and light-cone gauge $A^+ = 0$ provide a description in which the gluon contribution is measurable, as it is shown in the Jaffe-Manohar spin sum rule
+%%
+\begin{equation}
+    \frac{1}{2} \Delta \Sigma + \Delta G + \ell_{q} + \ell_{g} = \frac{1}{2}\,,
+    \label{eq:JM_sum}
+\end{equation}
+%%
+where $\Delta G$ is the gluon helicity and $\ell_{q,g}$ are the quark and gluon OAM. Even though it is frame and gauge dependent, expression \eqref{eq:JM_sum} earns its relevance in the high-energy collisions, where the IMF is fulfilled in a good approximation.

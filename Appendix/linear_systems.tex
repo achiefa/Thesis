@@ -1,0 +1,79 @@
+\chapter{Linear Systems}
+\label{app:lin_sys}
+
+In linear algebra, the Cholesky decomposition (or factorization) decomposes an hermitian, positive-definite matrix into a product of a lower triangular matrix and its conjugate. The formulation of the Cholesky decomposition requires some basic concepts in linear systems, that we shall briefly review.
+
+\section{Triangular Systems}
+The problem of finding a solution for a linear system $\mb{V} \cdot \mb{x} = \mb{b}$ appears frequently when dealing with numerical computation. Gaussian elimination provides an efficient way to solve such systems by converting the  original system into an equivalent triangular one. Thus, it is worth spending some words to outline basic properties and relations about triangular systems.\par
+Let us consider a linear system written in matrix notation
+\\
+\begin{equation}
+    \mb{L} \cdot \mb{x} = \mb{b} \hspace{10mm} \textrm{or} \hspace{10mm} \mb{U} \cdot \mb{x} = \mb{b} \; ,
+\end{equation}
+\\
+where $\mb{L}$ and $\mb{U}$ are lower and upper triangular matrices respectively. These systems can be solved in $\mb{x}$ by means of an iterative process called \textit{forward substitution} for lower triangular matrices and \textit{backward substitution} for upper triangular matrices. 
+
+
+\subsection*{Forward and Backward Substitution}
+Given a lower triangular matrix $\mb{L} \in \mathbb{R}^{n \times n}$, the matrix equation $\mb{L} \cdot \mb{x} = \mb{b}$ can be written as a system of n linear equations
+\\
+\begin{equation*}
+\begin{matrix}
+  \ell_{1,1} x_1 &   &                &   &        &   &                & = &    b_1 \\\\
+  \ell_{2,1} x_1 & + & \ell_{2,2} x_2 &   &        &   &                & = &    b_2 \\\\
+          \vdots &   &         \vdots &   & \ddots &   &                &   & \vdots \\
+  \ell_{m,1} x_1 & + & \ell_{m,2} x_2 & + & \dotsb & + & \ell_{m,m} x_m & = &    b_m \\
+\end{matrix}
+\end{equation*}
+\\
+The first equation does only involve $x_1$ and can be solved by simply inverting the relation. We can then substitute $x_1$ into the second equation and solve for $x_2$. By iterating this method, we can find the solution for each variable which takes the form
+\\
+\begin{equation*}
+    x_i = \frac{b_i - \sum_{j=1}^{i-1}\ell_{i,j}\,x_j}{\ell_{i,i}} \;.
+\end{equation*}
+\\
+Thus, given a linear triangular system with n equations, the algorithm requires $\mathcal{O}(n)$ steps to find the complete set of solutions. The backward substitution works as the forward substitution, but the iteration procedure is inverted. \textcolor{red}{Should I insert an explicit form for the solution in the backward propagation case?}
+
+\subsection*{The LU factorisation}
+It can be shown that if a matrix $\mb{V} \in \mathbb{R}^{n\times n}$ is nonsingular, then it is possible to implement an algorithm that computes an unit lower triangular matrix $\mb{L} \in \mathbb{R}^{n\times n}$ and an upper triangular matrix $\mb{U} \in  \mathbb{R}^{n\times n}$ such that 
+\\
+\begin{equation*}
+    \mb{V} = \mb{L} \mb{U} 
+\end{equation*}
+\\
+and $\det\left( \mb{V} \right) = u_{1,1} \, u_{2,2} \, \dots \, u_{n,n} $. For more details and a guided proof of this statement see Ref.\cite{GoluVanl96}. 
+
+\section{Special Linear System and Cholesky factorization}
+When dealing with numerical analysis it can be fruitful to exploit symmetries and properties whenever they are present. We shall examine the case in which $\mb{V}$ is both symmetric and positive definite, allowing to define the Cholesky decomposition.
+
+\subsection*{Symmetry and the $\mb{L} \mb{D} \mb{L}^T$ decomposition.}
+If $\mb{V}$ is a symmetric and admits a LU decomposition, $\mb{V} = \mb{L} \mb{U}$, then $\mb{L}$ and $\mb{U}$ are related. In particular, it can be proved (\textit{e.g.} see Ref.\cite{GoluVanl96}) that $\mb{U} = \mb{D} \mb{L}^T$, where $\mb{D} \in \mathbb{R}^{n \times n}$ is a diagonal matrix. Thus, the matrix $\mb{V}$ admits the following decomposition
+\\
+\begin{equation*}
+    \mb{V} = \mb{L} \mb{D} \mb{L}^T \;,
+\end{equation*}
+\\
+which is also unique. This factorization is necessary to introduce the Cholesky decomposition which, in addition to the symmetry assumption, exploits the positiveness of the matrix $\mb{V}$.
+
+\subsection{Cholensy factorization}
+A matrix $\mb{V}\in \mathbb{R}^{n \times n}$ is said to be positive definite if $\mb{x}^T \mb{V} \mb{x} > 0$ for all nonzero $\mb{x} \in \mathbb{R}^{n}$. If $\mb{V}$ is also symmetric, then there exists an unique lower triangular matrix $\mb{G} \in \mathbb{R}^{n \times n}$ with positive diagonal entries such that
+\\
+\begin{equation*}
+    \mb{V} = \mb{G} \mb{G}^T \;.
+\end{equation*}
+\\
+The matrix $\mb{G}$ is called \textit{Cholesky factor} and its entries can be computed recursively as follows
+\\
+\begin{align*}
+    &G_{ii} = \sqrt{V_{ii} - \sum_{k=1}^{i-1} G_{ik}^2}\\\\
+    & G_{ij} = \frac{1}{G_{jj}} \left[ \mb{V}_{ij} - \sum_{k=1}^{j-1} G_{ik} G_{jk}\right] \hspace{5mm} \textrm{for} \hspace{5mm} i>j\\\\
+    &G_{ij} = 0 \hspace{5mm} \textrm{for} \hspace{5mm} i<j \; .
+\end{align*}
+\\
+The Cholesky decomposition can be used to solve linear system described by a positive definite, symmetric matrix $\mb{V}$. Indeed, the slution of the original system $\mb{V} \cdot \mb{x} = \mb{b}$ is then found solving two distinct triangular systems by applying forward substitution
+\\
+\begin{equation*}
+    \mb{G}\cdot \mb{y} = \mb{b} \; \; \rightarrow \; \;  \mb{G}^{T}\cdot \mb{x} = \mb{y} \; \; \Longrightarrow \; \; \mb{V} \cdot\mb{x} = \mb{G} \mb{G}^T \cdot \mb{x} = \mb{G} \cdot \mb{y} = \mb{b}\; .
+\end{equation*}
+For a proof of the previous statements and an extended discussion of the Cholesky decomposition, see Ref.\cite{GoluVanl96}.\par
+Most of the tools we have discussed so far are implemented in common and useful libraries, such us the Gnu Scientific Library, which is also exploited in the MAP collaboration.
