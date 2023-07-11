@@ -25,6 +25,7 @@ bottom=25mm]{geometry}
 \usepackage{tensor}
 \usepackage{slashed}
 \usepackage{MnSymbol}
+\usepackage{afterpage}
 
 \graphicspath{{images/}{./Chapters/Chapter_2/figs}{./Chapters/Chapter_3/figs}}
 
@@ -39,7 +40,11 @@ bottom=25mm]{geometry}
 
 \input{Thesis_frontmatter/title-page.tex}
 
+\afterpage{\null\thispagestyle{empty}\clearpage}
+
 \tableofcontents
+
+\afterpage{\null\thispagestyle{empty}\clearpage}
 
 %\input{Chapters/Chapter_1/chapter_1.tex}
 \input{Chapters/Chapter_2/chapter_2.tex}
