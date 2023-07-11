@@ -1,3 +1,5 @@
 pdfs
 output
 *.pdf
+*.bbl
+*.xml
