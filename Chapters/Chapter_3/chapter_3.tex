@@ -181,8 +181,6 @@ In case of double convolutions, as for the SIDIS observables, this procedure sti
 \subsection{Neural Network parametrisation}
 \label{sec:NN}
 
-\red{Dire che la parametrizzazione tramite NN è controllata dal codice NNAD, Ref.}\\
-\red{Dire qualcosa sulla alta ridondanza della rete per renderla piu' flessibile e indipendente dall'architettura.}\\
 In \texttt{Denali}, polarised PDFs are parametrised in terms of a neural network. In the context of PDF determination, neural networks have been used for the first time by the NNPDF collaboration \cite{Forte:2002fg}. For the current analysis, we will deal with feed-forward neural network, although other structure can be obtained (see \textit{e.g.} \cite{Bishop}). The part of the code concerning the parametrisation with neural networks, and that also provides an efficient way to compute the analytic derivatives, is handled by \texttt{NNAD} \cite*{AbdulKhalek:2020uza}.\par
 Neural networks are neural inspired nonlinear model for supervised learning. Basically speaking, neural network models can be regarded as a series of nonlinear transformations. The building blocks of a network are the \textit{neurons} (or $\textit{nodes}$), organised in \textit{layers}, with the output of one layer serving as the input for the next. The first layer of the network is the \textit{input} layer, whereas final one corresponds to the \textit{output} layer. All the layers in the midst are called \textit{hidden units} (or \textit{hidden layers}).\par
 Starting from input layer, we can construct $N_1$ linear combinations of the input variables $x_1, \dots, x_N$ and obtain:
