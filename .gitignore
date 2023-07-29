@@ -3,3 +3,4 @@ output
 *.bbl
 *.xml
 .DS_Store
+.vscode
