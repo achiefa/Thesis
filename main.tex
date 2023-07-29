@@ -26,15 +26,21 @@ bottom=25mm]{geometry}
 \usepackage{slashed}
 \usepackage{MnSymbol}
 \usepackage{afterpage}
+%Options: Sonny, Lenny, Glenn, Conny, Rejne, Bjarne, Bjornstrup
+\usepackage[Bjornstrup]{fncychap}
+\usepackage[bottom]{footmisc}
 
-\graphicspath{{images/}{Chapters/Chapter_2/figs/}{Chapters/Chapter_3/figs/}}
+\graphicspath{{images/}{Chapters/Chapter_2/figs/}{Chapters/Chapter_3/figs/}{Chapters/Chapter_4/figs/}}
 
-\bibliography{bibfile.bib, Chapters/Chapter_3/chapter3.bib, Chapters/Chapter_2/chapter2.bib}
+\bibliography{bibfile.bib, Chapters/Chapter_3/chapter3.bib, Chapters/Chapter_2/chapter2.bib, Chapters/Chapter_4/chapter4.bib}
 
 \begin{document}
 \newcommand{\T}[1]{\textrm{#1}}
 \newcommand{\red}[1]{\textcolor{red}{#1}}
 \newcommand{\mb}[1]{\mathbf{#1}}
+\newcommand{\secref}[1]{Sec.~\ref{#1}}
+\newcommand{\chapref}[1]{Chap.~\ref{#1}}
+\newcommand{\tran}[1]{{#1}^{T}}
 \setlength{\abovedisplayskip}{6mm}
 \setlength{\belowdisplayskip}{6mm}
 
@@ -46,7 +52,8 @@ bottom=25mm]{geometry}
 
 \afterpage{\null\thispagestyle{empty}\clearpage}
 
-%\input{Chapters/Chapter_1/chapter_1.tex}
+\raggedbottom
+\input{Chapters/Chapter_1/chapter_1.tex}
 \input{Chapters/Chapter_2/chapter_2.tex}
 \input{Chapters/Chapter_3/chapter_3.tex}
 \input{Chapters/Chapter_4/chapter_4.tex}
@@ -57,7 +64,7 @@ bottom=25mm]{geometry}
 \numberwithin{equation}{section}
 \setcounter{equation}{0}
 %\input{Appendix/spin.tex}
-%\input{Appendix/linear_systems.tex}
+\input{Appendix/linear_systems.tex}
 %\input{Appendix/exp_err_func.tex}
 
 \printbibliography
