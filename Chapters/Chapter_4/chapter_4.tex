@@ -36,7 +36,7 @@ In particular, correlated systematics (multiplicative and/or additive) are only 
   \centering % Center table
   \input{tables/DIS_data.tex}
   \caption{
-    \footnotesize
+    \small
     Experimental DIS data sets included in the \texttt{MAPpol1.0} analysis. For each experiment we show the number of data points before and after (in parenthesis) applying kinematic cuts, the covered kinematic range and the measured observable.
   \label{tab:DIS_data}}% Add 'table' caption
   \end{table}
@@ -49,7 +49,7 @@ In particular, correlated systematics (multiplicative and/or additive) are only 
   \centering % Center table
   \input{tables/SIDIS_data.tex}
   \caption{
-    \footnotesize
+    \small
     Experimental SIDIS data sets included in the \texttt{MAPpol1.0} analysis. For each experiment we show the number of data points before and after (in parenthesis) applying kinematic cuts, the covered kinematic range and the measured observable.
   \label{tab:SIDIS_data}}% Add 'table' caption
   \end{table}
@@ -99,13 +99,6 @@ where $z_j$ are independent, standard normal random variables such that
   \langle z_i \rangle = 0 \hspace{10mm} \T{and} \hspace{10mm}  \langle z_i z_j \rangle = \delta_{ij} \,.
 \end{equation}
 %%
-\begin{figure}[t]
-  \centering
-  \includegraphics[width=1\textwidth]{replica_number.png } 
-  \caption{\small{Scatter plot of experimental versus artificial Monte Carlo mean central values and absolute uncertainties of polarized structure functions computed from ensembles made of $N_{\T{rep}} = 10$, $100$, $1000$ replicas.}}
-  \label{fig:replica_number}
-\end{figure}
-%%
 It immediately follows that $\langle \chi^2 \rangle = N_{\T{dat}}$, as predicted by the $\chi^2$ distribution. Now, the covariance matrix, being a symmetric object, admits the so called Cholesky decomposition, that allows us to write
 %%
 \begin{equation}
@@ -134,7 +127,29 @@ It is straightforward to show that the fluctuations generated according to Eq.~\
   \langle f_j f_k \rangle = \langle f_j \rangle \langle f_k \rangle + V_{jk} \,,
 \end{gather}
 %%
-which are the expected relations for a correct generation of a Monte Carlo ensemble.\par
+which are the expected relations for a correct generation of a Monte Carlo ensemble.
+%
+\afterpage{
+  \begin{figure}[t]
+    \centering
+    \includegraphics[width=1\textwidth]{replica_number.png } 
+    \caption{\small{Scatter plot of experimental versus artificial Monte Carlo mean central values and absolute uncertainties of polarized structure functions computed from ensembles made of $N_{\T{rep}} = 10$, $100$, $1000$ replicas.\\}
+    \vspace{1cm}}
+    \label{fig:replica_number}
+  \end{figure}
+  %%
+  \begin{table}[!h]
+    \scriptsize
+    \centering % Center table
+    \input{tables/PE.tex}
+    \caption{
+      \small
+      Table of statistical estimators for the mean value computed from the Monte Carlo sample with $N_{\T{rep}}=10,\, 150,\, 1000$ replicas.
+    \label{tab:PE}}% Add 'table' caption
+  \end{table}
+  \clearpage
+}
+%
 The number of replicas is chosen in order to faithfully reproduce the statistical estimators of the original experimental data. For instance, we can check if the averages and the variances of the replica sample, that is
 %%
 \begin{equation}
@@ -145,7 +160,6 @@ reproduce the experimental central values and the uncertainties. Such a comparis
 %
 \begin{gather}
   \left< PE \left[ \left< F^{(\T{art})} \right>_{\T{rep}} \right] \right>_{\T{dat}} = \frac{1}{N_{\T{dat}}} \sum_{i=1}^{N_{\T{dat}}} \frac{\abs{\left< F_i^{\T{(art)}} \right>_{\T{rep}} - F_{i}^{\T{(exp)}}}}{F_i^{\T{(exp)}}}\,, \\
-  %%
   r \left[ F^{\T{(art)}} \right] = \frac{\left< F^{\T{(exp)}} \left< F^{\T{(art)}} \right>_{\T{rep}} \right>_{\T{dat}} - \left< F^{\T{(exp)}} \right>_{\T{dat}} \left<  \left< F^{\T{(art)}} \right>_{\T{(rep)}}\right>_{\T{dat}} }{\sigma_s^{\T{(exp)}} \sigma_s^{\T{(art)}} }\,,
 \end{gather}
 %%
@@ -157,8 +171,9 @@ where the scatter variance are defined as
   \sigma^{\T{art}}_s = \sqrt{\left< \left( \left<F^{\T{(art)}}\right>_{\T{rep}} \right)^2 \right>_{\T{dat}} - \left( \left< \left<F^{\T{(art)}}\right>_{\T{rep}} \right>_{\T{(dat)}} \right)^2} \,.
 \end{gather}
 %%
-Essentially, the percentage error describes how well the central values are recovered by the Monte Carlo sample. On the other hand, the scatter correlation $r$ reflects the capacity of the Monte Carlo sample to reproduce the correlations that are present in the original data set. For each experiment, we show these two values for the observables $g_1^{(h)}$ and $g_1^{(h)}/F_1^{(h)}$ in Tab.~. We see that a Monte Carlo sample with size $N_{\T{rep}} = 150$ gives a satisfactory reproduction of mean values and uncertainties of experimental data. The improvements obtained by using a larger sample are moderate, and, in any case, do not justify the higher computational effort. For these reasons, we will henceforth adopt the ensemble with $N_{\T{rep}} = 150$ replicas as the standard configuration for our fits.
+Essentially, the percentage error describes how well the central values are recovered by the Monte Carlo sample. On the other hand, the scatter correlation $r$ reflects the capacity of the Monte Carlo sample to reproduce the correlations that are present in the original data set. For each experiment, we show these two values for the observables $g_1^{(h)}$ and $g_1^{(h)}/F_1^{(h)}$ in Tab.~\ref{tab:PE}. We see that a Monte Carlo sample with size $N_{\T{rep}} = 150$ gives a satisfactory reproduction of mean values and uncertainties of experimental data. The improvements obtained by using a larger sample are moderate, and, in any case, do not justify the higher computational effort. For these reasons, we will henceforth adopt the ensemble with $N_{\T{rep}} = 150$ replicas as the standard configuration for our fits.
 
+%_________________________________
 \section{Details of the analysis}
 \label{sec:4.2}
 Here we summarise the aspects concerning the QCD analysis of polarised structure functions. The main observables throughout the analysis are the structure functions $g_1$, Eq.~\eqref{eq:g1_QFT}, and $g_1^h$, Eq.~\eqref{eq:g1h}, for DIS and SIDIS respectively. They are expressed in terms of combinations of PDFs and provide complementary constraints on the distributions.%
