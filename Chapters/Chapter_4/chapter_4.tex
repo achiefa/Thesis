@@ -17,17 +17,43 @@ We review the experimental data sets used in the determination of the \texttt{MA
   \label{fig:kin_cov}
 \end{figure}
 %%
-In our analysis, we use inclusive and semi-inclusive lepton-nucleon DIS data coming from different facilities such as CERN \cite{EuropeanMuon:1989yki, Heiliger:1993qt, COMPASS:2006mhr, COMPASS:2010wkz, COMPASS:2010hwr}, SLAC \cite{E142:1993hql, E143:1998hbs, E154:1997xfa, E155:2000qdr}, DESY \cite{HERMES:2018awh, HERMES:2006jyl, HERMES:1997hjr} and Jefferson Lab \cite{Kramer:2002tt, JeffersonLabHallA:2004tea, CLAS:2014qtg}. For both DIS and SIDIS, the lepton beams are made of either electrons or muons. The targets are either protons or neutrons, and, in some case, deuterons. The main features of the data sets are summarised in Tab.~, in which we show the number of data points, the kinematic coverage, and the measured observables. The global kinematic coverage in the $(x,Q^2)$ plane is also shown in Fig.~\ref{fig:kin_cov}. \par
+In our analysis, we use inclusive and semi-inclusive lepton-nucleon DIS data coming from different facilities such as CERN \cite{EuropeanMuon:1989yki, SpinMuon:1999udj, COMPASS:2006mhr, COMPASS:2010wkz, COMPASS:2010hwr}, SLAC \cite{E142:1993hql, E143:1998hbs, E154:1997xfa, E155:2000qdr}, DESY \cite{HERMES:2018awh, HERMES:2006jyl, HERMES:1997hjr} and Jefferson Lab \cite{Kramer:2002tt, JeffersonLabHallA:2004tea, CLAS:2014qtg}. For both DIS and SIDIS, the lepton beams are made of either electrons or muons. The targets are either protons or neutrons, and, in some case, deuterons. The main features of the data sets are summarised in Tabs.~[\ref{tab:DIS_data}, \ref{tab:SIDIS_data}], in which we show the number of data points, the kinematic coverage, and the measured observables. The global kinematic coverage in the $(x,Q^2)$ plane is also shown in Fig.~\ref{fig:kin_cov}. \par
 The observable that we use in the analysis is the (semi-)inclusive structure function $g_1^{(h)}$. However, some experiments provide its value normalised the unpolarised structure function, that is $g_1^{(h)}/F_1^{(h)}$. Thus, in computing the predictions, we must calculate the unpolarised structure function $F_1^{(h)}$, which introduces an additional dependence on the unpolarised parton set. The unpolarised set of PDFs adopted in the analysis is \texttt{NNPDF\red{which one?}}. We observe that some experiments publish many data tables with different observables, which eventually may be used to reconstruct the structure function of interest (see \textit{e.g.}, Ref.~\cite{Nocera:2014vla}).\par
 In order to ensure the reliability of perturbative QCD, we exclude all data points with $Q^2 \leq Q^2_{\T{cut}} = 1 \, \T{GeV}^2$. This cut corresponds to the orange-coloured area of Fig.~\ref{fig:kin_cov}. In addition, we also impose a cut on the squared invariant mass of the hadronic final state $W^2$, in order to remove all the points that may be affected by higher-twist corrections, as discussed in \secref{sec:field_theoretic}. In particular, we will exclude points such that $W^2 \approx Q^2 (1-x)/x \leq W^2_{\T{cut}} = 6.5 \, \T{GeV}^2$. The excluded area  is shown in green in Fig.~\ref{fig:kin_cov}.\par
 The resulting kinematic coverage is highly affected by these cuts. Starting from $480$ initially available points, after cuts this number reduces to $N_{\T{dat}}=360$,  -- a reduction of the $\sim 25\%$ respect to the initial points. We observe that the most affected experiments are those performed by Jefferson Lab \cite{Kramer:2002tt, JeffersonLabHallA:2004tea, CLAS:2014qtg}. Indeed, the cut in $W^2$ mainly affects all data points that cover the large-$x$ and small-$Q^2$ corner, which is exactly the region probed by these experiments.\par
 Although the coverage of both low- and large-$x$ regions have been improved in recent years, the present situation for polarised data is not comparable with the unpolarised counterpart. This latter provides over than $3000$ data points coming from different processes other than DIS (see \textit{e.g}, Ref.~\cite{Kassabov:2022pps}). Moreover, the accuracy of these points is also better if compared to the unpolarised case. Still, this does not prevent us to perform a global determination, provided a reliable estimation of PDF uncertainties.\par
-For each observable listed in Tab.~, the experiments provide information about their uncertainties.
+For each observable listed in Tabs.~[\ref{tab:DIS_data},\ref{tab:SIDIS_data}], the experiments provide information about their uncertainties.
 In particular, correlated systematics (multiplicative and/or additive) are only given by E143, E155, EMC, and HERMES, whereas the other experiments only give uncorrelated uncertainties. With this information at our disposal, we can construct the covariance matrix $V_{ij}$ as follows
 %%
 \begin{equation}
   V_{ij} =  \sigma_{i,\T{unc}} \sigma_{j,\T{unc}} \delta_{ij} + \sum_{\ell=1}^{l} \sigma_{i,\T{corr}}^{(l)} \sigma_{j,\T{corr}}^{(\ell)} \,,
 \end{equation}
+%%
+\afterpage{
+\begin{landscape}% Landscape page
+  \begin{table}
+  \scriptsize
+  \centering % Center table
+  \input{tables/DIS_data.tex}
+  \caption{
+    \footnotesize
+    Experimental DIS data sets included in the \texttt{MAPpol1.0} analysis. For each experiment we show the number of data points before and after (in parenthesis) applying kinematic cuts, the covered kinematic range and the measured observable.
+  \label{tab:DIS_data}}% Add 'table' caption
+  \end{table}
+\end{landscape}}
+%%
+\afterpage{
+\begin{landscape}% Landscape page
+  \begin{table}
+  \scriptsize
+  \centering % Center table
+  \input{tables/SIDIS_data.tex}
+  \caption{
+    \footnotesize
+    Experimental SIDIS data sets included in the \texttt{MAPpol1.0} analysis. For each experiment we show the number of data points before and after (in parenthesis) applying kinematic cuts, the covered kinematic range and the measured observable.
+  \label{tab:SIDIS_data}}% Add 'table' caption
+  \end{table}
+\end{landscape}}
 %%
 where $i$ and $j$ run over the experimental data points, $\sigma_{i,\T{corr}}^{(\ell)}$ are the various sources of correlated uncertainties, and $\sigma_{i,\T{unc}}$ are the uncorrelated uncertainties. The latter are defined as the sum in quadrature of all uncorrelated sources of statistical $\sigma_{i,\T{stat}}$ and systematic $\sigma_{i,\T{syst}}$ error for the $i$-th point
 %%
@@ -209,7 +235,7 @@ where the average over replicas is defined as
   \left< F_i^{\T{(net)}} \right>_{\T{rep}} = \frac{1}{N_{\T{rep}}} \sum_{k} F^{(k)}_i \,.
 \end{equation}
 %%
-Here, $F_i$ may represent one of the observable presented in Tab.. We will refer to Eq.~\eqref{eq:global_chi2} as the global $\chi^2$. It is computed at the end of the optimisation procedure and thus it is not minimised. The parameter space is explored with the SGD method discussed in \secref{sec:NNtr}, which sought for the minimum of the error function, Eq.~\eqref{eq:EF_k}.%
+Here, $F_i$ may represent one of the observable presented in Tabs.~[\ref{tab:DIS_data},\ref{tab:SIDIS_data}]. We will refer to Eq.~\eqref{eq:global_chi2} as the global $\chi^2$. It is computed at the end of the optimisation procedure and thus it is not minimised. The parameter space is explored with the SGD method discussed in \secref{sec:NNtr}, which sought for the minimum of the error function, Eq.~\eqref{eq:EF_k}.%
 
 As discussed at the end of \secref{sec:NNtr}, the neural network parametrisation is able to fit not only the underlying physics, but also statistical noise of the data set -- a problem also known as \textit{overlearning}. Thus, the best fit does not always coincide with the minimum of the figure of merit, Eq.~\eqref{eq:EF_k}. In order to find the best fit, we use the cross-validation method \cite{pml1Book}. It works as follows:
 %%
@@ -271,7 +297,6 @@ The positivity constraint is introduced analytically in the present work, acting
 \end{equation}
 %%
 being $\sigma_i(x,\mu^2)$ the sigmoid activation function of the $i$-th output of the network. We observe that Eq.~\eqref{eq:pos_net} not only imposes the positivity bound Eq.~\eqref{eq:positivity_fl}, but also constraint to zero parton distribution at $x=1$, provided that the unpolarised PDF is zero at the same point. 
-
 
 \section{Results}
 \label{sec:4.4}
