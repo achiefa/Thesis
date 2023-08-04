@@ -1,12 +1,12 @@
 \chapter{Polarised PDFs from DIS and SIDIS}
 \label{ch:4}
 
-In this Chapter, we present the first determination of polarised PDFs at next-to-next-to-leading order accuracy based on the MAP methodology, \texttt{MAPpol1.0}. The determination has been carried out including all available data from inclusive and semi-inclusive, neutral current, polarised DIS coming from different facilities. The final result will be a determination of light-flavours quark, antiquark, and gluon distributions at NNLO accuracy. In \secref{sec:4.1} we review the available data sets, and we discuss how pseudodata are generated in the context of the Monte Carlo method. The details of the analysis are discussed in \secref{sec:4.2}. In \secref{sec:4.3} we review the fitting strategy and discuss how the methodologies discussed in \chapref{ch:3} apply in our case. Finally, the \texttt{MAPpol1.0} parton set is presented in \secref{sec:4.4}, together with its stability upon the variation of some theoretical constraints.
+In this Chapter, I present the first determination of polarised PDFs at next-to-next-to-leading order accuracy based on the MAP methodology, \texttt{MAPpol1.0}. The determination has been carried out including all available data from inclusive and semi-inclusive, neutral current, polarised DIS coming from different facilities. The final result will be a determination of light-flavours quark, antiquark, and gluon distributions at NNLO accuracy. In \secref{sec:4.1} I review the available data sets, and I discuss how pseudodata are generated in the context of the Monte Carlo method. The details of the analysis are discussed in \secref{sec:4.2}. In \secref{sec:4.3} I review the fitting strategy and discuss how the methodologies discussed in \chapref{ch:3} apply in the present work. Finally, the \texttt{MAPpol1.0} parton set is presented in \secref{sec:4.4}, together with its stability upon the variation of some theoretical constraints.
 
 \section{Experimental input}
 \label{sec:4.1}
 
-We review the experimental data sets used in the determination of the \texttt{MAPpol1.0} parton set, and we present how the uncertainties are taken into account. Then, we show the construction of the artificial ensemble of data points based on the Monte Carlo sampling method.
+I review the experimental data sets used in the determination of the \texttt{MAPpol1.0} parton set, and I present how the uncertainties are taken into account. Then, I show the construction of the artificial ensemble of data points based on the Monte Carlo sampling method.
 
 \subsection*{Data sets}
 %%
@@ -17,13 +17,16 @@ We review the experimental data sets used in the determination of the \texttt{MA
   \label{fig:kin_cov}
 \end{figure}
 %%
-In our analysis, we use inclusive and semi-inclusive lepton-nucleon DIS data coming from different facilities such as CERN \cite{EuropeanMuon:1989yki, SpinMuon:1999udj, COMPASS:2006mhr, COMPASS:2010wkz, COMPASS:2010hwr}, SLAC \cite{E142:1993hql, E143:1998hbs, E154:1997xfa, E155:2000qdr}, DESY \cite{HERMES:2018awh, HERMES:2006jyl, HERMES:1997hjr} and Jefferson Lab \cite{Kramer:2002tt, JeffersonLabHallA:2004tea, CLAS:2014qtg}. For both DIS and SIDIS, the lepton beams are made of either electrons or muons. The targets are either protons or neutrons, and, in some case, deuterons. The main features of the data sets are summarised in Tabs.~[\ref{tab:DIS_data}, \ref{tab:SIDIS_data}], in which we show the number of data points, the kinematic coverage, and the measured observables. The global kinematic coverage in the $(x,Q^2)$ plane is also shown in Fig.~\ref{fig:kin_cov}. \par
-The observable that we use in the analysis is the (semi-)inclusive structure function $g_1^{(h)}$. However, some experiments provide its value normalised the unpolarised structure function, that is $g_1^{(h)}/F_1^{(h)}$. Thus, in computing the predictions, we must calculate the unpolarised structure function $F_1^{(h)}$, which introduces an additional dependence on the unpolarised parton set. The unpolarised set of PDFs adopted in the analysis is \texttt{NNPDF\red{which one?}}. We observe that some experiments publish many data tables with different observables, which eventually may be used to reconstruct the structure function of interest (see \textit{e.g.}, Ref.~\cite{Nocera:2014vla}).\par
-In order to ensure the reliability of perturbative QCD, we exclude all data points with $Q^2 \leq Q^2_{\T{cut}} = 1 \, \T{GeV}^2$. This cut corresponds to the orange-coloured area of Fig.~\ref{fig:kin_cov}. In addition, we also impose a cut on the squared invariant mass of the hadronic final state $W^2$, in order to remove all the points that may be affected by higher-twist corrections, as discussed in \secref{sec:field_theoretic}. In particular, we will exclude points such that $W^2 \approx Q^2 (1-x)/x \leq W^2_{\T{cut}} = 6.5 \, \T{GeV}^2$. The excluded area  is shown in green in Fig.~\ref{fig:kin_cov}.\par
-The resulting kinematic coverage is highly affected by these cuts. Starting from $480$ initially available points, after cuts this number reduces to $N_{\T{dat}}=360$,  -- a reduction of the $\sim 25\%$ respect to the initial points. We observe that the most affected experiments are those performed by Jefferson Lab \cite{Kramer:2002tt, JeffersonLabHallA:2004tea, CLAS:2014qtg}. Indeed, the cut in $W^2$ mainly affects all data points that cover the large-$x$ and small-$Q^2$ corner, which is exactly the region probed by these experiments.\par
-Although the coverage of both low- and large-$x$ regions have been improved in recent years, the present situation for polarised data is not comparable with the unpolarised counterpart. This latter provides over than $3000$ data points coming from different processes other than DIS (see \textit{e.g}, Ref.~\cite{Kassabov:2022pps}). Moreover, the accuracy of these points is also better if compared to the unpolarised case. Still, this does not prevent us to perform a global determination, provided a reliable estimation of PDF uncertainties.\par
-For each observable listed in Tabs.~[\ref{tab:DIS_data},\ref{tab:SIDIS_data}], the experiments provide information about their uncertainties.
-In particular, correlated systematics (multiplicative and/or additive) are only given by E143, E155, EMC, and HERMES, whereas the other experiments only give uncorrelated uncertainties. With this information at our disposal, we can construct the covariance matrix $V_{ij}$ as follows
+The analysis makes use of inclusive and semi-inclusive lepton-nucleon DIS data coming from different facilities such as CERN \cite{EuropeanMuon:1989yki, SpinMuon:1999udj, COMPASS:2006mhr, COMPASS:2010wkz, COMPASS:2010hwr}, SLAC \cite{E142:1993hql, E143:1998hbs, E154:1997xfa, E155:2000qdr}, DESY \cite{HERMES:2018awh, HERMES:2006jyl, HERMES:1997hjr} and Jefferson Lab \cite{Kramer:2002tt, JeffersonLabHallA:2004tea, CLAS:2014qtg}. For both DIS and SIDIS, the lepton beams are made of either electrons or muons. The targets are either protons or neutrons, and, in some case, deuterons. The main features of the data sets are summarised in Tabs.~[\ref{tab:DIS_data}, \ref{tab:SIDIS_data}], in which the number of data points, the kinematic coverage, and the measured observables are shown. The global kinematic coverage in the $(x,Q^2)$ plane is also shown in Fig.~\ref{fig:kin_cov}. \par
+The observable adopted in the present work is the (semi-)inclusive structure function $g_1^{(h)}$. However, some experiments provide its value normalised to the unpolarised structure function, that is $g_1^{(h)}/F_1^{(h)}$. Thus, in computing the predictions, one must calculate the unpolarised structure function $F_1^{(h)}$, which introduces an additional dependence on the unpolarised parton set.%
+
+In order to ensure the reliability of perturbative QCD, all data points with $Q^2 \leq Q^2_{\T{cut}} = 1 \, \T{GeV}^2$ are excluded. This cut corresponds to the orange-coloured area of Fig.~\ref{fig:kin_cov}. In addition, I also impose a cut on the squared invariant mass of the hadronic final state $W^2$, in order to remove all the points that may be affected by higher-twist corrections, as discussed in \secref{sec:field_theoretic}. In particular, points with $W^2 \approx Q^2 (1-x)/x \leq W^2_{\T{cut}} = 6.5 \, \T{GeV}^2$ will be excluded (green area in Fig.~\ref{fig:kin_cov}).%
+
+The resulting kinematic coverage is highly affected by these cuts. Starting from $480$ initially available points, after cuts this number reduces to $N_{\T{dat}}=360$,  -- a reduction of the $\sim 25\%$ respect to the initial points. It can be observed that the most affected experiments are those performed by Jefferson Lab \cite{Kramer:2002tt, JeffersonLabHallA:2004tea, CLAS:2014qtg}. Indeed, the cut in $W^2$ mainly affects all data points that cover the large-$x$ and small-$Q^2$ corner, which is exactly the region probed by these experiments.%
+
+Although the coverage of both low- and large-$x$ regions have been improved in recent years, the present situation for polarised data is not comparable with the unpolarised counterpart. This latter provides over than $3000$ data points coming from different processes other than DIS (see \textit{e.g}, Ref.~\cite{Kassabov:2022pps}). Moreover, the accuracy of these points is also better if compared to the unpolarised case. Still, this does not prevent us to perform a global determination, provided a reliable estimation of the uncertainties.%
+
+For each observable listed in Tabs.~[\ref{tab:DIS_data},\ref{tab:SIDIS_data}], the experiments furnish information about their uncertainties. In particular, correlated systematics (multiplicative and/or additive) are only given by E143, E155, EMC, and HERMES, whereas the other experiments provide uncorrelated uncertainties only. The experimental covariance matrix $V_{ij}$ is constructed as follows
 %%
 \begin{equation}
   V_{ij} =  \sigma_{i,\T{unc}} \sigma_{j,\T{unc}} \delta_{ij} + \sum_{\ell=1}^{l} \sigma_{i,\T{corr}}^{(l)} \sigma_{j,\T{corr}}^{(\ell)} \,,
@@ -37,7 +40,7 @@ In particular, correlated systematics (multiplicative and/or additive) are only 
   \input{tables/DIS_data.tex}
   \caption{
     \small
-    Experimental DIS data sets included in the \texttt{MAPpol1.0} analysis. For each experiment we show the number of data points before and after (in parenthesis) applying kinematic cuts, the covered kinematic range and the measured observable.
+    Experimental DIS data sets included in the \texttt{MAPpol1.0} analysis. For each experiment, the number of data points before and after (in parentheses) applying kinematic cuts, the covered kinematic range and the measured observables are shown.
   \label{tab:DIS_data}}% Add 'table' caption
   \end{table}
 \end{landscape}}
@@ -50,7 +53,7 @@ In particular, correlated systematics (multiplicative and/or additive) are only 
   \input{tables/SIDIS_data.tex}
   \caption{
     \small
-    Experimental SIDIS data sets included in the \texttt{MAPpol1.0} analysis. For each experiment we show the number of data points before and after (in parenthesis) applying kinematic cuts, the covered kinematic range and the measured observable.
+    Experimental SIDIS data sets included in the \texttt{MAPpol1.0} analysis. For each experiment, show the number of data points before and after (in parenthesis) applying kinematic cuts, the covered kinematic range and the measured observables are shown.
   \label{tab:SIDIS_data}}% Add 'table' caption
   \end{table}
 \end{landscape}}
@@ -138,7 +141,7 @@ which are the expected relations for a correct generation of a Monte Carlo ensem
     \label{fig:replica_number}
   \end{figure}
   %%
-  \begin{table}[!h]
+  \begin{table}[b]
     \scriptsize
     \centering % Center table
     \input{tables/PE.tex}
@@ -192,29 +195,26 @@ Since we use data with different targets, we must take into account the hadron t
 %%
 where $I=1$, $0.5$ and $0$ representing proton, deuteron, and neutron respectively. A similar relation also holds for antiquark distributions. We will henceforth assume that PDFs refer to the proton. The other distributions can be obtained by means of Eqs.~\eqref{eq:iso_rel}.%
 
-Since both $\Delta s$ and $\Delta \bar{s}$ are sea-distributions for all targets, we will further assume that
+Since both $\Delta s$ and $\Delta \bar{s}$ are sea-distributions for all targets, I assume that
 %%
 \begin{equation}
-  \Delta s = \Delta \bar{s} \,.
+  \Delta s = \Delta \bar{s} \,,
 \end{equation}
 %%
-In doing so, we decrease the number of unknown quantities, and focus the analysis to valence quarks. We will also neglect the heavier quark and antiquark distributions for charm and bottom flavours. The threshold under which this assumption is reliable has been fixed to the quark masses, assuming the values $m_c=1.51\, \T{GeV}$ and $m_b=4.92\, \T{GeV}$. For the QCD calculation, the value for the strong coupling constant has been fixed to $\alpha_s(M_Z^2) = 0.118$.\par
-Finally, the computation of SIDIS observables requires the introduction of fragmentation functions sets. For this analysis, we will use the pion and kaon fragmentation functions sets \texttt{MAPFF1.0} obtained from a global analysis carried out at next-to-next-to-leading order \cite{Khalek:2021gxf, AbdulKhalek:2022laj}.
+which simplifies the analysis. The analysis has been carried out neglecting heavy quark distributions, which been fixed to zero. The value for the strong coupling constant has been fixed to $\alpha_s(M_Z^2) = 0.118$. Finally, the computation of SIDIS observables requires the introduction of fragmentation functions sets. For this analysis, I make use of the pion and kaon fragmentation functions sets \texttt{MAPFF1.0} obtained from a global analysis performed at next-to-next-to-leading order accuracy~\cite{Khalek:2021gxf, AbdulKhalek:2022laj}.
 
 \section{Fitting configuration}
 \label{sec:4.3}
-In this section, we shall give the details of the fitting configuration adopted in the \texttt{MAPPol1.0} analysis. We discuss which flavours are taken into account and how the distributions are parametrised in terms of neural network. Then, we will move to the description of the training procedure, providing a more detailed picture than that given in \secref{sec:NNtr}. In particular, we will see the difference between the error function used during the minimisation and the global error function. Finally, we review the theoretical constraints assumed in the analysis and their implications.
+In this section, I give the details of the fitting configuration adopted in the \texttt{MAPPol1.0} analysis. We discuss which flavours are taken into account and how the distributions are parametrised in terms of neural network. Then, we will move to the description of the training procedure, providing a more detailed picture than that given in \secref{sec:NNtr}. In particular, we will see the difference between the error function used during the minimisation and the global error function. Finally, we review the theoretical constraints assumed in the analysis and their implications.
 
 \subsection*{Neural Network parametrisation}
-The six independent distributions that are of our concern throughout the analysis are $\Delta u, \, \Delta d, \, \Delta s, \, \Delta \bar{u}, \, \Delta \bar{d}$ and $\Delta g$. These distributions are parametrised in terms of a single multi-layer feed-forward neural network, whose output layer is compounded of six differential nodes, one for each distribution. The PDFs are intended to be parametrised at an initial scale $\mu_0 = 1 \, \T{GeV}$. The output of the network is then evolved to the experimental scale by means of the DGLAP equations, Eq.~\eqref{eq:DGLAP_coupled}.%
+The six independent distributions that are determined through the analysis are $\Delta u, \, \Delta d, \, \Delta s, \, \Delta \bar{u}, \, \Delta \bar{d}$ and $\Delta g$. These distributions are parametrised in terms of a single multi-layer feed-forward neural network, whose output layer is compounded of six differential nodes, one for each distribution. The PDFs are parametrised at an initial scale $\mu_0 = 1 \, \T{GeV}$. The output of the network is then evolved to the experimental scale by means of the DGLAP equations, Eq.~\eqref{eq:DGLAP_coupled}. It has been observed that the variation of the initial scale up to $\mu_0 = 1.5 \, \T{Gev}$ does not affect the final results. At higher value the heavy quark distributions would no longer be negligible\footnote{\footnotesize{The threshold over which heavy quark distributions start to arise is fixed to the quark masses, $m_c=1.51\, \T{GeV}$ and $m_b=4.92\, \T{GeV}$}}.%
 
 The architecture of the neural network is 1-10-6, which entails 86 free parameters. We explicitly verified the parametrisation to be redundant, ensuring that the results do not depend on the architecture. Indeed, keeping on the single deep-layer structure, we have not observed any considerable differences in the results by either improving the nodes of the internal layer up to 20 or reducing this number to 5. We figured out that an architecture with 10 internal nodes is a good compromise between the number of parameters and the redundancy in the parametrisation, which is enough to reproduce any functional form given sufficient training time.%
 
-The single node in the input layer corresponds to the Bjorken variable $x$. Other determinations supplement the above parametrisation with a preprocessing function. This consists of multiplying the neural network by a fixed function that reflects some known behaviour of the distributions. For instance, the \texttt{NNODFpol1.0} analysis from NNPDF collaboration \cite{Nocera:2014gqa} introduces these functions to implement small- and large-x behaviours of the distributions. Even though such an approach may help the algorithm in terms of efficiency, it can be source of biases. For that reason, we choose to use the neural network without any preprocessing function.%
+The single node in the input layer corresponds to the Bjorken variable $x$\footnote{\footnotesize{Other determinations supplement the above parametrisation with a preprocessing function. This consists of multiplying the neural network by a fixed function that reflects some known behaviour of the distributions. For instance, the \texttt{NNODFpol1.1} analysis from NNPDF collaboration \cite{Nocera:2014gqa} introduces these functions to implement small- and large-x behaviours of the distributions.}}. All the nodes except for the input node use a sigmoid as activation function, Eq.~\eqref{eq:sigmoid}. However, we slightly modify the outputs of the last node in order to constraint to zero parton distributions at $x=1$ and to implement, analytically, theoretical constraints, as we shall see later.%
 
-All the nodes except for the input node use a sigmoid as activation function, Eq.~\eqref{eq:sigmoid}. However, we slightly modify the outputs of the last node in order to constraint to zero parton distributions at $x=1$ and to implement, analytically, theoretical constraints, as we shall see later.%
-
-Finally, we remark that there are as many networks as the number of replicas that we are working with. In our case, we will deal with 150 neural networks, representing the statistical ensemble of polarised PDFs. Since dealing with such a huge number of networks is a heavy computational task, the outputs (\textit{i.e.}, the PDFs) are put on a grid in the $(x,Q^2)$ plane. The value for an arbitrary pair $(x,Q^2)$ can be easily accessed through the LHAPDF interface \cite{Buckley:2014ana}. A schematic representation of the neural network and of the subsequent steps is sketched in Fig.~\ref{fig:NN_plot}.
+Finally, it is worth noting that there are as many networks as the number of replicas that have been generated. In this case, there are 150 neural networks, representing the statistical ensemble of polarised PDFs. Since dealing with such a huge number of networks is a heavy computational task, the outputs of (\textit{i.e.}, the PDFs) are put on a grid in the $(x,Q^2)$ plane. The value for an arbitrary pair $(x,Q^2)$ can be easily accessed through the LHAPDF interface \cite{Buckley:2014ana}. A schematic representation of the fitting algorithm is sketched in Fig.~\ref{fig:NN_plot}.
 %%
 \begin{figure}[t]
   \centering
@@ -240,7 +240,7 @@ The error function, Eq.~\eqref{eq:EF_k}, must not be confused with the $\chi^2$ 
 experimental central value and is defined as
 %%
 \begin{equation}
-  \chi^2 = \frac{1}{N_{\T{dat}}} \sum_{i,j}^{N_{\T{dat}}} \left( F_{i}^{\T{(exp)}} - \left<F_{i}^{\T{(net)}}\right>_{\T{rep}} \right) (\T{cov})^{-1}_{ij} \left( F_{j}^{\T{(art)}} - \left<F_{j}^{\T{(net)}}\right>_{\T{rep}} \right) \,,
+  \chi^2 = \frac{1}{N_{\T{dat}}} \sum_{i,j}^{N_{\T{dat}}} \left( F_{i}^{\T{(exp)}} - \left<F_{i}^{\T{(net)}}\right>_{\T{rep}} \right) (\T{cov})^{-1}_{ij} \left( F_{j}^{\T{(exp)}} - \left<F_{j}^{\T{(net)}}\right>_{\T{rep}} \right) \,,
   \label{eq:global_chi2}
 \end{equation}
 %%
@@ -260,7 +260,7 @@ As discussed at the end of \secref{sec:NNtr}, the neural network parametrisation
   \item Finally, the best fit corresponds to the minimum of the validation's error function within a fixed number of iterations, which in our case corresponds to $N_{\T{iter}} = 3000$.
 \end{enumerate}
 %%
-The profile of the figure of merit for an arbitrary replica is shown in Fig.~\ref{fig:profile}. We see that immediately after the minimum of the validation curve has been reached, it starts to increase, whereas the training curve keeps reducing. This means that the network is learning the statistical noise of the training set, which is different from that of the validation set. In the present analysis, equal training and validation fractions are chosen, that is $f_{\T{tr}} = f_{\T{val}} = 50\%$. However, some experimental sets are highly affected by the kinematic cuts and only a small portion of data points survives. In this case, the training set would be too small, affecting the stability of the minimisation. Hence, if the number of points after cuts is less or equal to 5, all the points will be included in the training set.
+The profile of the figure of merit for an arbitrary replica is shown in Fig.~\ref{fig:profile}. We see that, immediately after the minimum of the validation curve has been reached, it starts to increase, whereas the training curve keeps reducing. This means that the network is learning the statistical noise of the training set, which is different from that of the validation set. In the present analysis, equal training and validation fractions are chosen, that is $f_{\T{tr}} = f_{\T{val}} = 50\%$. However, some experimental sets are highly affected by the kinematic cuts and only a small portion of data points survives. In this case, the training set would be too small, affecting the stability of the minimisation. Hence, if the number of points after cuts is less or equal to 5, all the points will be included in the training set.
 
 %%
 \begin{figure}[t]
@@ -274,7 +274,7 @@ The profile of the figure of merit for an arbitrary replica is shown in Fig.~\re
 \subsection*{Theoretical constraints}
 We have already mentioned that, due to the scarcity and the low accuracy of data, polarised PDF are loosely constrained. This not only affects the efficiency of the algorithm, but has a huge impact on the final result. In order to improve the constraining power and to reduce the uncertainties of the polarised PDFs, we apply theoretical constraints to the analysis. In particular, we consider sum rules and positivity.%
 
-Sum rules refer to the hadronic matrix elements $a_3$ an $a_8$, whose values can be extracted from measurements in hyperon $\beta$-decay, Eqs.~\eqref{eq:a3_a8_values}. They can be related to the PDFs via Eqs.~[\ref{eq:a3_PM}-\ref{eq:a8_PM}], provided that exact $SU(3)_f$ symmetry is assumed. The theoretical constraint is introduced at a data set level. This means that the values in \eqref{eq:a3_a8_values} are treated as standard data points, with central value and (uncorrelated) uncertainty. Hence, at each iteration of the optimisation procedure, the algorithm will compute, in addition to the observable $g_1^{(h)}$ or $g_1^{(h)}/F_1^{(h)}$, the predictions for $a_3$ and $a_8$ via Eqs.~[\ref{eq:a3_PM}-\ref{eq:a8_PM}]. Sum rules provide further information on polarised PDFs. If the SIDIS data sets were not included, the only source of information for the sea-quark flavour $\Delta s$ would only come from this theoretical constraint. It will be interesting to study how these constraints affect that distribution if SIDIS data sets are excluded.%
+Sum rules refer to the hadronic matrix elements $a_3$ an $a_8$, whose values can be extracted from measurements in hyperon $\beta$-decay, Eqs.~\eqref{eq:a3_a8_values}. They can be related to the PDFs via Eqs.~(\ref{eq:a3_PM}-\ref{eq:a8_PM}), provided that exact $SU(3)_f$ symmetry is assumed. The theoretical constraint is introduced at a data set level. This means that the values in \eqref{eq:a3_a8_values} are treated as standard data points, with central value and (uncorrelated) uncertainty. Hence, at each iteration of the optimisation procedure, the algorithm will compute, in addition to the observable $g_1^{(h)}$ or $g_1^{(h)}/F_1^{(h)}$, the predictions for $a_3$ and $a_8$ via Eqs.~(\ref{eq:a3_PM}-\ref{eq:a8_PM}). Sum rules provide further information on polarised PDFs. If the SIDIS data sets were not included, the only source of information for the sea-quark flavour $\Delta s$ would only come from this theoretical constraint. It will be interesting to study how these constraints affect that distribution if SIDIS data sets are excluded.%
 
 The other theoretical constraints, which enforce the most the PDFs, is the positivity constraint. The key point is that the cross-sections that enter the polarised asymmetries, Eq.~\eqref{eq:asymmetry}, must be positive. This implies that $g_1^{(h)}$ is bounded by its unpolarised counterpart $F_1^{(h)}$, that is
 %%
@@ -302,7 +302,7 @@ The positivity bound Eq.~\eqref{eq:positivity_fl} must take into account the unc
   \label{eq:positivity_fl_sigma}
 \end{equation}
 %%
-where $\left<f_i (x,Q^2)\right>_{\T{rep}}$ is the mean value over the statistical ensemble of unpolarised PDFs and $\sigma_i(x,Q^2)$ its corresponding one-sigma uncertainty, both evaluated at the kinematic point $(x,Q^2)$. This ensures that also the uncertainty of the unpolarised distribution is propagated through the analysis within a standard deviation. On the other hand, the second approach applies the same bound Eq.~\eqref{eq:positivity_fl}, but with randomly chosen replica from the statistical set of distributions. This means that, replica by replica, the unpolarised PDF that enters the constraint is different. Hence, this stocasticity spans the space of distributions, reflecting the uncertainties of the statistical ensemble in the bound. For consistency, the unpolarised PDF set is the same that has been used to compute the unpolarised structure function $F_1^{(h)}$. \red{Which method do we adopt?}%
+where $\left<f_i (x,Q^2)\right>_{\T{rep}}$ is the mean value over the statistical ensemble of unpolarised PDFs and $\sigma_i(x,Q^2)$ its corresponding one-sigma uncertainty, both evaluated at the kinematic point $(x,Q^2)$. This ensures that also the uncertainty of the unpolarised distribution is propagated through the analysis within a standard deviation. On the other hand, the second approach applies the same bound Eq.~\eqref{eq:positivity_fl}, but with randomly chosen replica from the statistical set of distributions. This means that, replica by replica, the unpolarised PDF that enters the constraint is different. Hence, this stocasticity spans the space of distributions, reflecting the uncertainties of the statistical ensemble in the bound. For consistency, the unpolarised PDF set is the same that has been used to compute the unpolarised structure function $F_1^{(h)}$.%
 
 The positivity constraint is introduced analytically in the present work, acting on the output layer of the neural network. Indeed, for each output node of the last layer (\textit{i.e.}, for each parametrised flavour), we impose
 %%
@@ -315,4 +315,107 @@ being $\sigma_i(x,\mu^2)$ the sigmoid activation function of the $i$-th output o
 
 \section{Results}
 \label{sec:4.4}
+I present the first determination of polarised PDFs \texttt{MAPpol1.0} obtained at next-to-next-to-leading order accuracy. It relies on the methodologies that have been covered earlier and includes the data sets introduced above. The parton distributions have been parametrised at an initial scale $\mu_0 = 1 \, \T{Gev}$, below the heavy quark mass thresholds. Hence, heavy quark distributions have been set to zero. Throughout the QCD analysis, mass corrections have been neglected. The unpolarised set PDFs used to compute the unpolarised structure functions $F_1^{(h)}$ and to impose the positivity constraint is \texttt{NNPDF31\_nnlo\_pch\_as\_0118}~\cite{NNPDF:2017mvq}, while the set of FFs for the SIDIS data sets is \texttt{MAPFF1.0}~\cite{Khalek:2021gxf, AbdulKhalek:2022laj}.%
 
+First, I present the \texttt{MAPpol1.0} set and its statistical features. The impact of higher order corrections is discussed and compared with the NLO determination obtained with the same fitting configuration. Then, I review the effects of the theoretical constraints and assess the stability of the results by performing a number of variations w.r.t. the baseline setting. Finally, I compare the \texttt{MAPpol1.0} set with other competitors, pointing out the main differences that arise among them.
+
+\begin{figure}[t!]
+  \centering
+  \includegraphics[width=\textwidth]{Chapters/Chapter_4/figs/nnlo_nlo.pdf}
+  \caption{\small{Comparison between the NNLO and NLO \texttt{MAPpol1.0} parton distributions at $\mu_0 = 1 \, \T{GeV}$ in flavour basis and plotted as functions of $x$.}}
+  \label{fig:nnlo_nlo}
+\end{figure}
+
+\subsection{Impact of NNLO corrections}
+
+\begin{table}[t!]
+  \centering % Center table
+  \small
+  \input{tables/chi2_nnlo_nlo.tex}
+  \caption{
+    \small
+    Values of the $\chi^2$ per data point computed with Eq.~\eqref{eq:global_chi2} for the individual data sets included in the \texttt{MAPpol1.0} analysis for NNLO and NLO distributions. The global $\chi^2$ values are also diplayed.  
+  \label{tab:nnlo_nlo_chi2}}% Add 'table' caption
+\end{table}
+%
+The NNLO and NLO determinations obtained in this work are presented in Fig.~\ref{fig:nnlo_nlo}. The values of the $\chi^2$ per data point computed with Eq.~\eqref{eq:global_chi2} are displayed in Tab.~\ref{tab:nnlo_nlo_chi2} for each data set included in the analysis. The results presented in this section are obtained with the fitting configuration discussed above, summarised in Tab.~\ref{tab:baseline}, and which I will refer to as the baseline fitting configuration.%
+
+\begin{table}[t!]
+  \centering 
+  \small
+  \input{tables/baseline_configuration.tex}
+  \caption{
+    \small
+    Fitting configuration of baseline setting of the presented \texttt{MAPpol1.0} set.
+  \label{tab:baseline}}
+\end{table}
+
+The values of the global $\chi^2$ per data point for the determinations at NLO and NNLO are $0.68$ and $0.86$, respectively. This indicates a general good description of the entire data set for both fits. A closer inspection of Tab.~\ref{tab:nnlo_nlo_chi2} reveals that a good description is achieved for all individual data sets. In the case of JLAB data, the smallness of the $\chi^2$ is due to the fact that only a very small number of experimental points survives the kinematic cut, and hence it is not statistically significant. The discrepancy between the two values of the $\chi^2$ at NLO and NNLO seems to indicate that the global agreement with data of the central fit is worse for the NNLO case. However, the latter receives a significant enhancement in terms of accuracy of parton distributions, which balances the higher value of the $\chi^2$.%
+
+In the case of the gluon distribution $\Delta g$, the differences are mostly in terms of accuracy. On the one hand, the uncertainty is considerably smaller for the NNLO fit, in particular in the region $0.003 \lesssim x \lesssim 0.5$. On the other hand, the central value remains almost stable, except for the middle-$x$ region. However, it must be remarked that the gluon distribution remains poorly constrained by data, and the inclusion of difference processes other than those included in this analysis may considerably change the behaviour of the gluon.%
+
+The impact of NNLO corrections on valence quark distributions $\Delta u$ and $\Delta d$ is moderate. In particular, the $\Delta u$ distributions are in perfect agreement in terms of both precision and accuracy. The central value of the $\Delta d$ receives a small upward shift at NNLO in the small-$x$ region, whereas the uncertainty slightly decreases in the middle-$x$ region.%
+
+The sea-antiquark distributions $\Delta \bar{u}$ and $\Delta \bar{d}$ are generally affected by smaller uncertainty for the NNLO case. The central value $\Delta \bar{u}$ receives a small upward shift, whereas the central value of $\Delta \bar{d}$ is almost unchanged.%
+
+The main differences are observed in the case of the strange distribution $\Delta s$. The NNLO fit introduces a remarkable downward shift for the central value of the distribution in central-$x$ region, restoring a similar behaviour to that of the same distribution at LO. Also in this case, the uncertainty generally reduces, in particular in the small to medium-$x$ region.%
+
+In conclusion, the impact of perturbative corrections is generally moderate, except for $\Delta g$ and $\Delta s$. The former presents a remarkable uncertainty reduction, while the latter is moved close to the behaviour at LO. The other distributions receive small enhancements in terms of accuracy, and the central values remain almost comparable between the two perturbative orders. The higher value of the global $\chi^2$ at NNLO can be ascribed to the fact that the analysis makes use of assumption $\Delta s = \Delta \bar{s}$. If true, this would indicate that NNLO corrections bear different information for $\Delta s$ and $\Delta \bar{s}$ separately. Hence, further studies should be carried out by relaxing this assumption and assessing the impact of independent parametrisations of the strange distributions.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Impact of theoretical assumptions}
+The results presented in this Thesis have been obtained with a number of theoretical and methodological constraints, as discussed earlier. I now study the stability of the results upon variation of some of these assumptions. In particular, I will review the impacts of sum rules and positivity constraints to parton distributions. 
+
+\subsection*{Sum rules}
+The baseline fit \texttt{MAPpol1.0} includes the sum rules $a_3$ and $a_8$ as part of the data set. In order to assess the impact of these two additional points, I performed another PDF determination at NNLO using the same baseline configuration Tab.~\ref{tab:baseline}, but without sum rules constraint. The result, compared with the baseline fit at NNLO presented before, is displayed in Fig.~\ref{fig:a3_a8_nnlo}.%
+
+\begin{figure}[t!]
+  \centering
+  \includegraphics[width=\textwidth]{Chapters/Chapter_4/figs/a3_a8_nnlo.pdf}
+  \caption{\small{Comparison between the \texttt{MAPpol1.0} baseline set at NNLO with and without including sum rules $a_3$ and $a_8$ in the data set. Parton distributions are displayed in flavour basis at $\mu_0 = 1 \, \T{GeV}$ as functions of $x$.}}
+  \label{fig:a3_a8_nnlo}
+\end{figure}
+
+The values of the global $\chi^2$ per data point for the fit with and without the sum rules are shown in Tab.~\ref{tab:a3_a8_nnlo}. A small deterioration of the fit quality is presented for the constrained determination. However, this may be due to the fact that sum rules reduce the space of all possible parton distributions, affecting the $\chi^2$. The inspection of Fig.~\ref{fig:a3_a8_nnlo} leads to the conclusion that, in general, the impact on helicity PDFs from constraining $a_3$ and $a_8$ is small at NNLO. The prediction of the moments of $\Delta T_3$ and $\Delta T_8$ distributions have been computed for both constrained and unconstrained fits, and are reported in Tab.~\ref{tab:a3_a8_nnlo}. The unconstrained fit recovers these values with large uncertainties. Thus, at least at NNLO, the assumption of exact $SU(3)_f$ symmetry is compatible with the data included in the fit.%
+
+\begin{table}
+  \centering
+  \small
+  \input{tables/a3_a8_nnlo.tex}
+  \caption{
+    \small
+    Values of the global $\chi^2$ per data point for the two configurations w/ and w/o the sum rules constraint.
+  \label{tab:a3_a8_nnlo}}
+\end{table}
+
+The study on the impact of the sum rules have been carried out also at NLO accuracy, with the baseline configuration Tab.~\ref{tab:baseline}. The values of the global $\chi^2$ and of the moments of $\Delta T_3$ and $\Delta T_8$ distributions are reported in Tab.~\ref{tab:a3_a8_nlo}. The comparison between the constrained and the unconstrained fits is displayed in Fig.~\ref{}
+
+\begin{figure}[t!]
+  \centering
+  \includegraphics[width=\textwidth]{Chapters/Chapter_4/figs/a3_a8_nlo.pdf}
+  \caption{\small{Same as Fig.~\ref{fig:a3_a8_nnlo}, but at NLO accuracy.}}
+  \label{fig:a3_a8_nlo}
+\end{figure}
+
+\begin{table}
+  \centering
+  \small
+  \input{tables/a3_a8_nlo.tex}
+  \caption{
+    \small
+    Values of the global $\chi^2$ per data point for the two configurations w/ and w/o the sum rules constraint.
+  \label{tab:a3_a8_nlo}}
+\end{table}
+
+\subsection*{Positivity}
+
+
+
+\subsection{Comparison with other sets}
+
+\begin{figure}[t!]
+  \centering
+  \includegraphics[width=\textwidth]{Chapters/Chapter_4/figs/competitors.pdf}
+  \caption{\small{Comparison of the \texttt{MAPpol1.0}, \texttt{NNPDFpol1.1}~\cite{Nocera:2014gqa}, \texttt{JAM17}~\cite{Ethier:2017zbq} and \texttt{DSSV}~\cite{deFlorian:2008mr} sets. The distributions in flavour basis are displayed $\mu_0 = 1 \, \T{GeV}$. }}
+  \label{fig:competitors}
+\end{figure}
