@@ -358,7 +358,7 @@ The impact of NNLO corrections on valence quark distributions $\Delta u$ and $\D
 
 The sea-antiquark distributions $\Delta \bar{u}$ and $\Delta \bar{d}$ are generally affected by smaller uncertainty for the NNLO case. The central value $\Delta \bar{u}$ receives a small upward shift, whereas the central value of $\Delta \bar{d}$ is almost unchanged.%
 
-The main differences are observed in the case of the strange distribution $\Delta s$. The NNLO fit introduces a remarkable downward shift for the central value of the distribution in central-$x$ region, restoring a similar behaviour to that of the same distribution at LO. Also in this case, the uncertainty generally reduces, in particular in the small to medium-$x$ region.%
+The major differences are observed in the case of the strange distribution $\Delta s$. The NNLO fit introduces a remarkable downward shift for the central value of the distribution in central-$x$ region, restoring a similar behaviour to that of the same distribution at LO. Also in this case, the uncertainty generally reduces, in particular in the small to medium-$x$ region.%
 
 In conclusion, the impact of perturbative corrections is generally moderate, except for $\Delta g$ and $\Delta s$. The former presents a remarkable uncertainty reduction, while the latter is moved close to the behaviour at LO. The other distributions receive small enhancements in terms of accuracy, and the central values remain almost comparable between the two perturbative orders. The higher value of the global $\chi^2$ at NNLO can be ascribed to the fact that the analysis makes use of assumption $\Delta s = \Delta \bar{s}$. If true, this would indicate that NNLO corrections bear different information for $\Delta s$ and $\Delta \bar{s}$ separately. Hence, further studies should be carried out by relaxing this assumption and assessing the impact of independent parametrisations of the strange distributions.
 
@@ -366,8 +366,26 @@ In conclusion, the impact of perturbative corrections is generally moderate, exc
 \subsection{Impact of theoretical assumptions}
 The results presented in this Thesis have been obtained with a number of theoretical and methodological constraints, as discussed earlier. I now study the stability of the results upon variation of some of these assumptions. In particular, I will review the impacts of sum rules and positivity constraints to parton distributions. 
 
+%______________________
 \subsection*{Sum rules}
-The baseline fit \texttt{MAPpol1.0} includes the sum rules $a_3$ and $a_8$ as part of the data set. In order to assess the impact of these two additional points, I performed another PDF determination at NNLO using the same baseline configuration Tab.~\ref{tab:baseline}, but without sum rules constraint. The result, compared with the baseline fit at NNLO presented before, is displayed in Fig.~\ref{fig:a3_a8_nnlo}.%
+
+\begin{table}
+  \centering
+  \small
+  \input{tables/a3_a8.tex}
+  \caption{
+    \small
+    Values of the global $\chi^2$ per data point for the two configurations w/ and w/o the sum rules constraint.
+  \label{tab:a3_a8_nnlo}}
+\end{table}
+
+The baseline fit \texttt{MAPpol1.0} includes the sum rules $a_3$ and $a_8$ as part of the data set. In order to assess the impact of these two additional points, I performed two more PDF determinations at NLO and NNLO using the same baseline configuration Tab.~\ref{tab:baseline}, but without sum rules constraint. For each perturbative order, the comparisons is eventually displayed in Figs.\ref{fig:a3_a8_nnlo} and \ref{fig:a3_a8_nlo}. The corresponding values of the global $\chi^2$ per data point for the constrained and unconstrained fits are shown in Tab.~\ref{tab:a3_a8_nnlo}, where the prediction of the moments of $\Delta T_3$ and $\Delta T_8$ distributions are also shown.%
+
+At NNLO, a small deterioration of the fit quality is presented for the constrained determination. However, this may be due to the fact that sum rules reduce the space of all possible parton distributions, affecting the value of the global $\chi^2$. The inspection of Fig.~\ref{fig:a3_a8_nnlo} leads to the conclusion that, in general, the impact on helicity PDFs from constraining $a_3$ and $a_8$ is small, except for the sea quark distributions in the small-$x$ region. Moreover, the predictions reported in Tab.~\ref{tab:a3_a8_nnlo} for the NNLO case are in agreement within the uncertainties. Thus, at least at NNLO, the assumption of exact $SU(3)_f$ symmetry is compatible with the data included in the fit.%
+
+For the NLO case, the picture is slightly modified. Fig.~\ref{fig:a3_a8_nlo} shows that the gluon is highly affected by the constraint, in particular in the medium-$x$ region. The other distributions are almost unchanged, although an inflation of the uncertainty bounds arises below $x \simeq 0.01$. The fit quality is unaffected by including the constraint, as shown in Tab.~\ref{tab:a3_a8_nnlo}. The values of $a_3$ and $a_8$ are recovered by the unconstrained distribution, although the moment of the octet is affected by a huge uncertainty.%
+
+In conclusion, at NNLO the PDFs do not show much sensitivity to constraining $a_3$ and $a_8$, and the deterioration of the fit quality can be traced back to the reduction of the dimension of the functional space. At NLO the result is more stable in terms of fit quality, but the distribution of the gluon receives major changes. In both cases, the exact $SU(3)_f$ symmetry seems to be compatible with the included data.
 
 \begin{figure}[t!]
   \centering
@@ -376,20 +394,6 @@ The baseline fit \texttt{MAPpol1.0} includes the sum rules $a_3$ and $a_8$ as pa
   \label{fig:a3_a8_nnlo}
 \end{figure}
 
-The values of the global $\chi^2$ per data point for the fit with and without the sum rules are shown in Tab.~\ref{tab:a3_a8_nnlo}. A small deterioration of the fit quality is presented for the constrained determination. However, this may be due to the fact that sum rules reduce the space of all possible parton distributions, affecting the $\chi^2$. The inspection of Fig.~\ref{fig:a3_a8_nnlo} leads to the conclusion that, in general, the impact on helicity PDFs from constraining $a_3$ and $a_8$ is small at NNLO. The prediction of the moments of $\Delta T_3$ and $\Delta T_8$ distributions have been computed for both constrained and unconstrained fits, and are reported in Tab.~\ref{tab:a3_a8_nnlo}. The unconstrained fit recovers these values with large uncertainties. Thus, at least at NNLO, the assumption of exact $SU(3)_f$ symmetry is compatible with the data included in the fit.%
-
-\begin{table}
-  \centering
-  \small
-  \input{tables/a3_a8_nnlo.tex}
-  \caption{
-    \small
-    Values of the global $\chi^2$ per data point for the two configurations w/ and w/o the sum rules constraint.
-  \label{tab:a3_a8_nnlo}}
-\end{table}
-
-The study on the impact of the sum rules have been carried out also at NLO accuracy, with the baseline configuration Tab.~\ref{tab:baseline}. The values of the global $\chi^2$ and of the moments of $\Delta T_3$ and $\Delta T_8$ distributions are reported in Tab.~\ref{tab:a3_a8_nlo}. The comparison between the constrained and the unconstrained fits is displayed in Fig.~\ref{}
-
 \begin{figure}[t!]
   \centering
   \includegraphics[width=\textwidth]{Chapters/Chapter_4/figs/a3_a8_nlo.pdf}
@@ -397,20 +401,30 @@ The study on the impact of the sum rules have been carried out also at NLO accur
   \label{fig:a3_a8_nlo}
 \end{figure}
 
+%_______________________
+\subsection*{Positivity}
+The baseline configuration exploits positivity of the individual cross-sections entering the polarised asymmetries to impose the leading order constraint, Eq.~\eqref{eq:positivity_fl}, to each parametrised flavour separately, by using the \texttt{NNPDF31\_nnlo\_pch\_as\_0118} set ~\cite{NNPDF:2017mvq}. The constraint is implemented analytically as a transformation in the last layer of the neural network according to Eq.~\eqref{eq:pos_net}. Hence, there is no need to check positivity a posteriori (\red{I would put this sentence before, when I introduce the positivity for the first time.}).%
+
+In order to assess the effect of the positivity constraint, I performed another fit where the positivity has been imposed as in Eq.~\eqref{eq:positivity_fl_sigma}, but with an inflated value of the standard deviation. In particular, the constraint has been relaxed to $50 \, \sigma$. The parton thus obtained are compared with the baseline fit and displayed in Fig.~\ref{fig:positivity}. The values of the global $\chi^2$ are reported in Tab.~\ref{tab:positivity}. The fit quality receives no significant change, with only a slight improvement in the global $\chi^2$ when the constrained is relaxed. As in the case of the sum rules, this indicates that the parametrisation is flexible enough to enclose the positivity, and the deterioration of the fit quality is then ascribed to the reduction of the functional space caused by the constraints. On the other hand, PDFs are significantly affected by the positivity bound, in particular in the large-$x$ region, where the presence of data is scarce. However, it must be observed that the effects of the positivity bounds on parton distributions at small-$x$ region are not significant, given the LO and NLO positivity bounds differ significantly in this region \cite{Altarelli:1998gn}. Thus, the results of the baseline \texttt{MAPpol1.0} should be considered reliable out of the extrapolation region at small-$x$.
+
+\begin{figure}[t!]
+  \centering
+  \includegraphics[width=\textwidth]{Chapters/Chapter_4/figs/positivity.pdf}
+  \caption{\small{Comparison of the baseline \texttt{MAPpol1.0} fit at NNLO (orange) with the same set without imposing positivity (blue). Parton distributions are displayed in flavour basis at $\mu_0 = 1 \, \T{GeV}$ as functions of $x$.}}
+  \label{fig:positivity}
+\end{figure}
+
 \begin{table}
   \centering
   \small
-  \input{tables/a3_a8_nlo.tex}
+  \input{tables/positivity.tex}
   \caption{
     \small
-    Values of the global $\chi^2$ per data point for the two configurations w/ and w/o the sum rules constraint.
-  \label{tab:a3_a8_nlo}}
+    Values of the global $\chi^2$ per data point for the baseline fit and the configuration with the positivity constrained relaxed to $50 \, \sigma$, both at NNLO.
+  \label{tab:positivity}}
 \end{table}
 
-\subsection*{Positivity}
-
-
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Comparison with other sets}
 
 \begin{figure}[t!]
