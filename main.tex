@@ -36,7 +36,7 @@ bottom=25mm]{geometry}
 
 \graphicspath{{images/}{Chapters/Chapter_2/figs/}{Chapters/Chapter_3/figs/}{Chapters/Chapter_4/figs/}}
 
-\bibliography{bibfile.bib, Chapters/Chapter_3/chapter3.bib, Chapters/Chapter_2/chapter2.bib, Chapters/Chapter_4/chapter4.bib}
+\bibliography{bibfile.bib, Chapters/Chapter_1/chapter1.bib, Chapters/Chapter_2/chapter2.bib, Chapters/Chapter_3/chapter3.bib, Chapters/Chapter_4/chapter4.bib}
 
 \begin{document}
 \newcommand{\T}[1]{\textrm{#1}}
@@ -45,6 +45,7 @@ bottom=25mm]{geometry}
 \newcommand{\secref}[1]{Sec.~\ref{#1}}
 \newcommand{\chapref}[1]{Chap.~\ref{#1}}
 \newcommand{\tran}[1]{{#1}^{T}}
+\newcommand{\quotes}[1]{``#1''}
 \setlength{\abovedisplayskip}{6mm}
 \setlength{\belowdisplayskip}{6mm}
 
@@ -57,6 +58,7 @@ bottom=25mm]{geometry}
 \afterpage{\null\thispagestyle{empty}\clearpage}
 
 \raggedbottom
+\mainmatter
 \input{Chapters/Chapter_1/chapter_1.tex}
 \input{Chapters/Chapter_2/chapter_2.tex}
 \input{Chapters/Chapter_3/chapter_3.tex}
