@@ -8,7 +8,6 @@
 \usepackage{bbold}
 \setlength{\jot}{10pt}
 \usepackage{mathtools}
-\usepackage{hyperref}
 \usepackage{tabularx}
 \usepackage{booktabs}
 \usepackage{graphicx}
@@ -33,6 +32,7 @@ bottom=25mm]{geometry}
 %Options: Sonny, Lenny, Glenn, Conny, Rejne, Bjarne, Bjornstrup
 \usepackage[Bjornstrup]{fncychap}
 \usepackage[bottom]{footmisc}
+\usepackage{hyperref}
 
 \graphicspath{{images/}{Chapters/Chapter_2/figs/}{Chapters/Chapter_3/figs/}{Chapters/Chapter_4/figs/}}
 
@@ -53,23 +53,29 @@ bottom=25mm]{geometry}
 
 \afterpage{\null\thispagestyle{empty}\clearpage}
 
+\input{acknowledgments.tex}
+
+\afterpage{\null\thispagestyle{empty}\clearpage}
+
 \tableofcontents
 
 \raggedbottom
-\mainmatter
 \input{Chapters/Chapter_1/chapter_1.tex}
 \input{Chapters/Chapter_2/chapter_2.tex}
 \input{Chapters/Chapter_3/chapter_3.tex}
 \input{Chapters/Chapter_4/chapter_4.tex}
 \input{Chapters/Chapter_5/chapter_5.tex}
 
+\afterpage{\null\thispagestyle{empty}\clearpage}
 
+\let\cleardoublepage\clearpage
 \appendix
-\numberwithin{equation}{section}
+\numberwithin{equation}{chapter}
 \setcounter{equation}{0}
 %\input{Appendix/spin.tex}
 \input{Appendix/linear_systems.tex}
-%\input{Appendix/exp_err_func.tex}
+\input{Appendix/exp_err_func.tex}
 
+\afterpage{\null\thispagestyle{empty}\clearpage}
 \printbibliography
 \end{document}
