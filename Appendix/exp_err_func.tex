@@ -1,103 +1,62 @@
 \chapter{Expectation value of the error function}
 \label{app:exp_err_func}
 
-During the minimization procedure for the fluctuated data points, the error function converges to 2. The reason is that the error function does not correspond to the $\chi^2$ distribution, as we shall see.\par
-Let us consider a data set $\mathcal{D}$ with $N_{dat}$ data points with a general covariance matrix $V$. Hence, the global $\chi^2$ is defined as 
-\\
+The error function subjected to the minimisation procedure does not correspond to the usual $\chi^2$ used to quantify the quality of the fit. Indeed, the residue is computed w.r.t. the fluctuated data points and thus mean value of the error function converges to $2$ instead of $1$. In the following, I will give a proof for that.%
+
+First, let us introduce a set of $N_{\T{dat}}$ data points distributed according to a multivariate Gaussian distribution $\mathcal{N}(\mb{d},\mb{V})$, with mean values $\mb{d} = (d_1, \dots, d_{N_{\T{dat}}})$ and covariance matrix $\mb{V}$. As explained in \secref{sec:optimisation}, artificial data points $\mb{d}^{(k)}$ are generated out of the original data set through the Monte Carlo sampling method and then compared with the predictions of the $k$-th replica $\mb{t}^{(k)}$ by means of the error function, whose definition is reported here for convenience
+%
 \begin{equation}
-    \chi^2 = \frac{1}{N_{dat}}\sum_{i,j=1}^{N_{dat}} \left(t_i - d_i \right) \left( V^{-1} \right)_{ij} \left(t_j - d_j \right)\
-\label{eq:app_chi2}
+    E^{(k)} = \frac{1}{N_{\T{dat}}} \sum_{i,j}^{N_{\T{dat}}} \left( \mb{t}^{(k)} - \mb{d}^{(k)} \right) (\T{cov})^{-1}_{ij} \left( \mb{t}^{(k)} - \mb{d}^{(k)} \right) \,.
+  \label{eq:app:E}
 \end{equation}
-\\
-where $t_i = t(Q^2_i, x_i)$ denotes the fitted function (the neural network in our case) and $D_i$ is the (non-fluctuated) central value given by the experiment. Equation \eqref{eq:app_chi2} may be written in matricial notation 
-\\
+%
+The key point to bear in mind is that both the artificial points $\mb{d^{(k)}}$ and the predictions related to the $k$-th replica $\mb{t}^{(k)}$ are distributed according to the same distribution of the original data set, that is $\mb{d^{(k)}}, \, \mb{t}^{(k)} \sim \mathcal{N}(\mb{d},\mb{V})$. As explicitly shown in \secref{sec:gen_MC}, artificial points are generated as follows
+%
 \begin{equation}
-    \chi^2 = \frac{1}{N_{dat}} (\mb{t} - \mb{d})^{T} \, \mb{V}^{-1} \, (\mb{t} - \mb{d}) = \frac{1}{N_{dat}} \mb{x}^T \, \mb{V}^{-1} \, \mb{x}.
-    \label{eq:app_chi2mat}
+    \mb{d}^{(k)} = \mb{d} + \mb{L} \cdot \mb{z}^{(k)} \,,
+    \label{eq:app:MC}
 \end{equation}
-\\
-In this notation, $\mb{t}$ is a vector distributed according to a multivariate normal distribution $\mb{t} \sim \mathcal{N}(\mb{d},\mb{V})$, whereas $\mb{d} = (D_1,\; D_2,\; \dots,\;  D_{N_{dat}})$ is the vector containing the central values. In the second equality the residue has been substituted by a new random vector $\mb{x}$ that, by definition, is distributed according to $\mb{x} \sim \mathcal{N}(\mb{0},\; \mb{V})$. It is more convenient, and also more stylish, to use the Cholesky decomposition of the covariance matrix $V$. Being a symmetric and positive define matrix, $\mb{V}$ can be decomposed as
-\\
+%
+where $\mb{L}$ is the lower triangular matrix from the Cholesky decomposition of the covariance matrix $\mb{V}$ (see \secref{sec:gen_MC} and App.\ref{app:lin_sys}) whereas $\mb{z} = (z_1, \, z_2, \dots,\, z_{N_{\T{dat}}})$ is distributed according to $\mb{z} \sim \mathcal{N}(\mb{0},\; I_{N_{\T{dat}}})$. By substituting Eq.~\eqref{eq:app:MC} in Eq.~\eqref{eq:app:E}, the error function can be recast as
+%
 \begin{equation}
-    \mb{V} = \mb{L} \mb{L}^T \; ,
-\label{eq:app_chodec}
+    \begin{split}
+        E \hspace{2mm} & = \hspace{2mm} \frac{1}{N_{\T{dat}}} \left( \mb{t}^{(k)} - \mb{d}\right)^T \, \mb{V}^{-1} \, \left( \mb{t}^{(k)} - \mb{d} \right) + \frac{1}{N_{\T{dat}}} \left( \mb{L} \cdot \mb{z}^{(k)} \right)^T \, \mb{V}^{-1} \left(  \mb{L} \cdot \mb{z}^{(k)} \right) \\
+        & \hspace{5mm} - \frac{2}{N_{\T{dat}}} \left( \mb{t}^{(k)} - \mb{d} \right)^T \, \left(\mb{L} \mb{L}^{T} \right)^{-1} \, \left(\mb{L} \cdot \mb{z}^{(k)} \right) \\
+        & = \left(\chi^2\right) + \frac{\left| \mb{z}^{(k)} \right|^2}{N_{\T{dat}}} - \frac{2}{N_{\T{dat}}} \left(\mb{w}^{(k)} \right)^T  \, \mb{z}^{(k)} \;,
+    \end{split}
+    \label{eq:app:E_split}
 \end{equation}
-\\
-where $\mb{L}$ is a lower triangular matrix. More detail on the Cholesky decomposition can be found in \textcolor{red}{appendix}. Then, it is straightforward to see that the $\chi^2$ can be written as
-\\
+%
+where $\mb{w}^{(k)} = \mb{L}^{-1} \cdot \left( \mb{t}^{(k)} - \mb{d} \right)$. In moving from the second to the third equality of Eq.~\eqref{eq:app:E_split}, I made use of the Cholesky decomposition of the covariance matrix, that is $\mb{V} = \mb{L} \mb{L}^{T}$. The equation above shows that the error function is the sum of three different contributions. The first term is the $\chi^2$ of the prediction evaluated w.r.t. the central value $\mb{d}$. The second one is the norm of the random vector $\mb{z}^{(k)}$ normalized to the number of data points, while the last one, more involved, is the product of two random variables. By linearity, the expectation value of the error function over all the replicas is the sum of the expectation values of each term appearing in the last line of Eq.~\eqref{eq:app:E_split}:
+%%
 \begin{equation}
-    \chi^2 = \left| \mb{L}^{-1} \cdot \mb{x} \right|^2 \; .
+    \left< E^{(k)} \right>_{\T{rep}} = \left<(\chi^2)^{(k)}\right>_{\T{rep}} + \frac{1}{N_{\T{dat}}} \left< \left| \mb{z}^{(k)} \right|^2 \right>_{\T{rep}} - \frac{2}{N_{\T{dat}}} \left<\left(\mb{w}^{(k)}\right)^T  \, \mb{z}^{(k)}\right>_{\T{rep}} \;.
+    \label{eq:app:exp_E_split}
 \end{equation}
-\\
-We can define the vector $\boldsymbol{\chi} = \mb{L} \cdot \mb{x}$, which is the solution of the linear system
-\\
-\begin{equation}
-    \mb{L} \cdot \boldsymbol{\chi} = \mb{x} \; ,
-\end{equation}
-\\
-which can be solved by forward substitution, so that the $\chi^2$ can be efficiently computed as
-\\
-\begin{equation}
-    \chi^2 = \norm{\boldsymbol{\chi}}^2 \; . 
-\end{equation}
-\\
-With this procedure the computation of the inverse of the covariance matrix $\mb{V}$ is bypassed, leading to a significant simplification in terms of computational resources\footnote{\footnotesize{\textcolor{red}{This part concerning the Cholesky decomposition inserted in another chapter of the appendix or inside the main chapters.}}}.\par
-By definition, the expectation value of the $\chi^2$ defined in \eqref{eq:app_chi2mat} is $\mathbb{E}[\chi^2] = 1$, since the residue is evaluated with respect to the central values. However, the expectation value is shifted when the residue is computed w.r.t. the fluctuated data points, which are generated with 
-\\
-\begin{equation}
-    \mb{d}^{(k)} = \mb{d} + \mb{L} \cdot z^{(k)} 
-\end{equation}
-\\
-where $z = (z_1, \; z_2, \; \dots \; z_{N_{dat}})$ is a vector distributed according to $\mb{z} \sim \mathcal{N}(\mb{0},\; I_{N_{dat}})$ such that
-\\
-\begin{equation}
-    \left< z_i \right> = 0 \hspace{10mm} \left< z_i \, z_j \right> = \delta_i \, \delta_j \;.
-\end{equation}
-\\
-The error function involved in the minimization procedure has the same definition of \eqref{eq:app_chi2}, but the quantities that it contains are different. Given the vector\footnote{\footnotesize{It is worth noting the vector $\mb{t}^{(k)}$ is a random vector distributed according to a multivariate normal distribution with mean value $\mb{d}$ and covariance matrix $\mb{V}$ for each replica.}} $\mb{t}^{(k)}$ that contains the points evaluated by the parametrization for the k-th artificial data set, the error function reads
-\\
-\begin{equation}
-\begin{split}
-    E^{(k)} & = \frac{1}{N_{dat}} \left(\mb{t}^{(k)} - \mb{d}^{(k)}\right)^T \, \mb{V}^{-1} \, \left( \mb{t}^{(k)} - \mb{d}^{k} \right) \\\\
-    & = \frac{1}{N_{dat}} \left(\mb{t}^{(k)} - \mb{d} - \mb{L} \cdot \mb{z}^{(k)} \right)^T \, \mb{V}^{-1} \, \left(\mb{t}^{(k)} - \mb{d} - \mb{L} \cdot \mb{z}^{(k)} \right) \\\\
-    & = \frac{1}{N_{dat}} \left( \mb{t}^{(k)} - \mb{d}\right)^T \, \mb{V}^{-1} \, \left( \mb{t}^{(k)} - \mb{d}\right) + \frac{1}{N_{dat}} \left( \mb{L} \cdot \mb{z}^{(k)} \right)^T \, \mb{V}^{-1} \left(  \mb{L} \cdot \mb{z}^{(k)} \right)\\\\
-    & \hspace{5mm} - \frac{2}{N_{dat}} \left( \mb{t}^{(k)} - \mb{d}\right)^T \, \left(\mb{L}\mb{L}^{T} \right)^{-1} \, \left(\mb{L} \cdot \mb{z}^{(k)}\right)\\\\
-    & = \left(\chi^2\right)^{(k)} + \frac{\left| \mb{z}^{(k)} \right|^2}{N_{dat}} - \frac{2}{N_{dat}} \left(\mb{w}^{(k)}\right)^T  \, \mb{z}^{(k)} \;,
-\end{split}
-\label{eq:app_errfun}
-\end{equation}
-\\
-where $\mb{w}^{(k)} = \mb{L}^{-1} \cdot \left( \mb{t}^{(k)} - \mb{d} \right)$. The last equality shows that the error function is the sum of three different contributions. The first term is the $\chi^2$ of the k-the replica evaluated w.r.t. the central value. The second one is the norm of the random vector $\mb{z}^{(k)}$ normalized to the number of data points. The last one, more involved, is the product of two random variable normally distributed. By linearity, the expectation value of the error function over all the replicas is the sum of the expectation values of each term appearing in the last line of equation \eqref{eq:app_errfun}:
-\\
-\begin{equation}
-\begin{split}
-    \left< E^{(k)} \right> & = \frac{1}{N_{rep}} \sum_{k=1}^{N_{rep}} \left[ \left(\chi^2\right)^{(k)} + \frac{\left| \mb{z}^{(k)} \right|^2}{N_{dat}} - \frac{2}{N_{dat}} \left( \mb{L}^{-1} \cdot \mb{y}^{(k)}\right)^T  \, \mb{z}^{(k)}\right] \\\\
-    & = \left<(\chi^2)^{(k)}\right>_{rep} + \frac{1}{N_{dat}} \left< \left| \mb{z}^{(k)} \right|^2 \right>_{rep} - \frac{2}{N_{dat}} \left<\left(\mb{w}^{(k)}\right)^T  \, \mb{z}^{(k)}\right>_{rep} \;.
-\end{split}
-\end{equation}
-\\
-The first term is 1 since it corresponds to the expectation value of a variable distributed according to a $\chi^2$ distribution. The second one is the sum of the expectation values of the squared elements contained in the vector $\mb{z}^{(k)}$. Remembering that $\mb{z} \sim \mathcal{N}(\mb{0},\, I_{N_{dat}}$ and that it contains $N_{dat}$ variables, the result is again 1. The last is zero, since it is the product of two normally distributed variables with null mean values. To see that, let us first understand how the vector $\mb{w}^{(k)}$ is distributed. To simplify the notation, I introduce a vector $\mb{y}^{(k)} = \mb{t}^{(k)} - \mb{d}$, which is distributed as $\mb{t}^{(k)}$ but with null mean values. Hence, we can write
-\\
+%%
+The first term is 1 since it corresponds to the expectation value of a variable distributed according to a $\chi^2$ distribution. The second one is the sum of the expectation values of the squared elements contained in the $N_{\T{dat}}$ dimensional vector $\mb{z}^{(k)}$. Given that $\mb{z}^{(k)} \sim \mathcal{N}(\mb{0},\, I_{N_{dat}})$, then $\left< \left| \mb{z}^{(k)} \right|^2 \right>_{\T{rep}} = N_{\T{dat}}$ and thus the second term is again 1. All we have left to do is to prove that the last term is zero. First, I am going to work out what distribution the vector $\mb{w}^{(k)}$ belongs to. For the sake of simplicity, I introduce the vector $\mb{y}^{(k)} = \mb{t}^{(k)} - \mb{d}$, and I can write
+%%
 \begin{equation}
     \mb{w}^{(k)} = \mb{L}^{-1} \cdot \mb{y}^{(k)} \;.
 \end{equation}
-\\
-The probability density function of $\mb{y}^{(k)}$ is a multivariate gaussian given by
-\\
+%%
+It must be observed that $\mb{y}^{(k)}$ follows the same distribution of $\mb{t}^{(k)}$, whose mean value is now shifted by a factor of $\mb{d}$. Thus, the probability density function of $\mb{y}^{(k)}$ is a multivariate Gaussian given by
+%%
 \begin{equation}
-    f_{\mb{y}} = (2\pi)^{-N_{dat}/2} \; \left| \mb{V} \right|^{-1/2} \; \exp{-\frac{1}{2}\overline{\mb{y}}^{(k)} \; \mb{V}^{-1} \; \mb{y}^{(k)}},
+    f_{\mb{y}} = (2\pi)^{-N_{\T{dat}}/2} \; \left| \mb{V} \right|^{-1/2} \; \exp{-\frac{1}{2}{\mb{y}}^{(k)T} \; \mb{V}^{-1} \; \mb{y}^{(k)}},
 \end{equation}
-\\
-where $\left| \mb{V} \right|$ denotes the determinant of the covariance matrix. Exploiting the Cholesky decomposition, the determinant can be written as 
-\\
+%%
+where $\left| \mb{V} \right|$ denotes the determinant of the covariance matrix $\mb{V}$. Exploiting the Cholesky decomposition, the determinant can be written as 
+%%
 \begin{equation}
     \left| \mb{V} \right| = \left| \mb{L} \, \mb{L}^T \right| = \left| \mb{L} \right|^2 \;.
 \end{equation}
-\\
-One can compute the probability density function of the random vector $\mb{w}^{(k)}$ as follows
-\\
+%%
+From the properties of probability functions, one can compute the transformed density $f_w$ as follows (see \textit{e.g.} Ref.~\cite{Bohm:2005bu})
+%%
 \begin{equation}
-    f_{\mb{w}} = f_{\mb{y}} \left| \dv{\mb{y}}{\mb{w}} \right| = \left|\mb{L} \right| \, f_{\mb{y}} = (2\pi)^{-N_{dat}/2} \; \exp{-\frac{1}{2}\overline{\mb{w}}^{(k)} \; \mb{w}^{(k)}} \; .
+    f_{\mb{w}} = f_{\mb{y}} \left| \dv{\mb{y}}{\mb{w}} \right| = \left|\mb{L} \right| \, f_{\mb{y}} = (2\pi)^{-N_{\T{dat}}/2} \; \exp{-\frac{1}{2}\mb{w}^{(k)T} \; \mb{w}^{(k)}} \; .
 \end{equation}
-\\
-As anticipated before, the product appearing in the last line of equation \eqref{eq:app_errfun} is distributed according to the convolution of two gaussian distributions both centered in zero. Since the mean value of convoluted gaussian is just the sum of the mean values of the parents gaussians, the expectation values of such a product is zero. We can conclude that the expectation value of the error function is $\left< E^{(k)} \right>_{rep}=2$, hence shifted by one respect to the centered global $\chi^2$ distribution defined in \eqref{eq:app_chi2}. 
+%%
+Thus, the vector $\mb{w}$ is also distributed according to a multivariate Gaussian distribution $\mathcal{N} (\mb{0}, I_{N_{\T{dat}}})$. The product of random variables appearing in the last element of Eq.~\eqref{eq:app:exp_E_split} is then distributed according to the convolution of two Gaussian distributions both centred in zero. Since the mean value of convoluted Gaussian distributions is just the sum of the parents mean values, the expectation values of such a product is zero.
