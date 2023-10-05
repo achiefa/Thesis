@@ -484,7 +484,7 @@ The global (reduced) $\chi^2$ for the aforementioned configurations at both pert
 %_________________________________________________
 \subsection{Comparison with other PDF sets}
 
-In Fig.~\ref{fig:competitors} I compare the PDFs obtained at NLO from the baseline fit, \texttt{MAPpol1.0}, to other available PDF sets from \texttt{NNPDFpol1.1}~\cite{Nocera:2014gqa}, \texttt{JAM17}~\cite{Ethier:2017zbq} and \texttt{DSSV}~\cite{deFlorian:2009vb}, all accurate to NLO. Here I present a brief summary of the main features that characterise each of these sets:
+In Fig.~\ref{fig:competitors} I compare the PDFs obtained at NLO from the baseline fit, \texttt{MAPpol1.0}, to other available PDF sets from \texttt{NNPDFpol1.1}~\cite{Nocera:2014gqa}, \texttt{JAM17}~\cite{Ethier:2017zbq} and \texttt{DSSV}~\cite{DeFlorian:2019xxt}, all accurate to NLO. Here I present a brief summary of the main features that characterise each of these sets:
 %%
 \begin{itemize}
   \item[] \texttt{\textbf{NNPDFpol1.1}} The parton set is obtained using inclusive DIS data. Other experimental information coming from open-charm production in fixed-target DIS, and jet and $W$ production in proton-proton collisions are then included in the PDF ensemble via Bayesian reweighting and unweighting \cite{Ball:2011gg, Ball:2010gb}. The functional parametrisation is given by a set of neural networks, one for each parametrised distribution. The architecture is wider than that presented in this Thesis, with two deep-layers inside. Moreover, the parametrisation is supplied with two preprocessing functions accounting for the small- and large-$x$ behaviours. The uncertainties are estimated with the Monte Carlo sampling method. On the side of theoretical assumptions, this set imposes positivity \eqref{eq:positivity_fl} and sum rules \eqref{eq:a3_a8_values} during the minimisation procedure through normalisation coefficients that are fitted to data. 
@@ -497,7 +497,7 @@ In Fig.~\ref{fig:competitors} I compare the PDFs obtained at NLO from the baseli
   \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{Chapters/Chapter_4/figs/competitors.pdf}
-    \caption{\small{Comparison of the \texttt{MAPpol1.0}, \texttt{NNPDFpol1.1}~\cite{Nocera:2014gqa}, \texttt{JAM17}~\cite{Ethier:2017zbq} and \texttt{DSSV}~\cite{deFlorian:2009vb} sets. The distributions are displayed at $\mu_0 = 1 \, \T{GeV}$ in flavour basis.}}
+    \caption{\small{Comparison of the \texttt{MAPpol1.0}, \texttt{NNPDFpol1.1}~\cite{Nocera:2014gqa}, \texttt{JAM17}~\cite{Ethier:2017zbq} and \texttt{DSSV}~\cite{DeFlorian:2019xxt} sets. The distributions are displayed at $\mu_0 = 1 \, \T{GeV}$ in flavour basis.}}
     \label{fig:competitors}
   \end{figure}
   \clearpage

@@ -49,17 +49,17 @@ bottom=25mm]{geometry}
 \setlength{\abovedisplayskip}{6mm}
 \setlength{\belowdisplayskip}{6mm}
 
+\frontmatter
 \input{Thesis_frontmatter/title-page.tex}
-
-\afterpage{\null\thispagestyle{empty}\clearpage}
+\clearpage
+\newpage
 
 \input{acknowledgments.tex}
-
-\afterpage{\null\thispagestyle{empty}\clearpage}
-
+\clearpage
+\newpage
 \tableofcontents
-
 \raggedbottom
+\mainmatter
 \input{Chapters/Chapter_1/chapter_1.tex}
 \input{Chapters/Chapter_2/chapter_2.tex}
 \input{Chapters/Chapter_3/chapter_3.tex}
