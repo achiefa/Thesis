@@ -2,7 +2,7 @@
 \chaptermark{Polarised DIS and SIDIS}
 \label{ch:2}
 
-This chapter is devoted to the discussion of the two physical processes that are taken into account in this Thesis, that is inclusive and semi-inclusive DIS. In Sec.~\ref{sec:theo_fram} I present the theoretical framework necessary to describe DIS experiments, providing an expression for the cross-section of polarized DIS in terms of polarized structure functions. The phenomenological relations between structure functions and measured observables is briefly reviewed in Sec.~\ref{sec:phenom_DIS}. Then, in Sec.~\ref{subsec:PM_hadronic_tensor} I will derive the expectations for the structure functions in the context of PM, and in Sec.~\ref{sec:field_theoretic} I show how QCD affects these predictions. Finally, in Sec.~\ref{sec:SIDIS} I present the theoretical structure necessary for the description of SIDIS processes.
+This chapter is devoted to the discussion of the two physical processes that are taken into account in this Thesis, that is inclusive and semi-inclusive DIS. In Sec.~\ref{sec:theo_fram} I present the theoretical framework necessary to describe DIS experiments, providing an expression for the cross-section of polarized DIS in terms of polarized structure functions. The phenomenological relations between structure functions and measured observables is briefly reviewed in Sec.~\ref{sec:phenom_DIS}. Then, in Sec.~\ref{subsec:PM_hadronic_tensor} I will derive the expectations for the structure functions in the context of parton model (PM), and in Sec.~\ref{sec:field_theoretic} I show how QCD affects these predictions. Finally, in Sec.~\ref{sec:SIDIS} I present the theoretical structure necessary for the description of SIDIS processes.
 
 %___________________________________________________________________________
 \section{Theoretical framework}
@@ -15,7 +15,7 @@ Let us consider the inclusive inelastic scattering of a polarised lepton beam of
     \label{eq:DIS}
 \end{equation}
 %%
-where $P$ is the four-momentum of the nucleon target and $k,k'$ are the four-momenta of the incoming ($\ell$) and outgoing $(\ell')$ leptons, respectively. The additional labels $S,s$ and $s'$ indicate the spin along the quantization direction of the target, the incoming and the outgoing leptons. Finally, $X$ indicates the sum of all undetected final states with collective momentum $P_X$. In the limit of large momentum transfer, this process is referred to as Deep Inelastic Scattering (DIS). In this Thesis, I will assume that the scattering is dominated by processes with only one photon exchanged, since the ranges of values in $Q^2$, provided by the present polarised data, never probe the region in which weak corrections become important\footnote{QCD corrections are henceforth neglected.}. The Feynman diagram of this process is shown in Fig.~\ref{fig:DIS_Feynamn}.
+where $P$ is the four-momentum of the nucleon target and $k,k'$ are the four-momenta of the incoming ($\ell$) and outgoing $(\ell')$ leptons, respectively. The additional labels $S,s$ and $s'$ indicate the spin along the quantization direction of the target, the incoming and the outgoing leptons. Finally, $X$ indicates the sum of all undetected final states with collective momentum $P_X$. In the limit of large momentum transfer, this process is referred to as Deep Inelastic Scattering (DIS). In this Thesis, I will assume that the scattering is dominated by processes with only one photon exchanged, since the ranges of values in $Q^2$, provided by the present polarised data, never probe the region in which weak corrections become important\footnote{QED corrections are henceforth neglected.}. The Feynman diagram of this process is shown in Fig.~\ref{fig:DIS_Feynamn}.
 %%
 \begin{figure}[t]
   \centering
@@ -35,10 +35,10 @@ The kinematics is worked out in the laboratory (LAB) reference frame, which corr
     \end{split}
 \end{equation}
 %%
-where $M$ is the nucleon mass. I will make use of the following invariant variables
+where $M$ is the nucleon mass. I will make use of the following invariant variables:
 %%
 \begin{align}
-        & \nu = \frac{q \cdot P}{M} = E - E' \;\; \textrm{the energy lost by incoming lepton},
+        & \nu = \frac{q \cdot P}{M} = E - E' \;\; \textrm{the energy lost by the incoming lepton},
         \label{eq:nu}\\[5pt]
         & Q^2 = - q^2 \;\; \textrm{the virtuality of the exchanged photon},
         \label{eq:Q2}\\
@@ -50,14 +50,14 @@ where $M$ is the nucleon mass. I will make use of the following invariant variab
         \label{eq:W2}
 \end{align}
 %%
-The process  is said to be "deep" when $Q^2 \gg M^2$ (\textit{i.e.} large momentum transfer), whereas the attribute "inelastic" is appropriate when $W^2 \gg M^2$ (\textit{i.e.} the hadron target is much inelastically excited). The amplitude for a process representing Fig.~\ref{fig:DIS_Feynamn}, with a generic final state $X$, is given by
+The process  is said to be \quotes{deep} when $Q^2 \gg M^2$ (\textit{i.e.} large momentum transfer), whereas the attribute \quotes{inelastic} is appropriate when $W^2 \gg M^2$ (\textit{i.e.} the hadron target is much inelastically excited). The amplitude for a process representing Fig.~\ref{fig:DIS_Feynamn}, with a generic final state $X$, is given by
 %%
 \begin{equation}
     \mathcal{M} = (-i e) \, \overline{u}(k',s') \, \gamma^{\mu}\, u(k,s) \, \frac{-i}{q^2} \, (-i e)\bra{X} j_{\mu}^{em} \qty(0) \ket{P,S} \,.
     \label{eq:ch2:amplitude}
 \end{equation}
 %%
-Being a totally-inclusive process, no particular particles in the final state are detected. Hence, the total cross-section must take into account all the possible out-states, that is a sum over all the possible states $X$. For this reason, only two kinematic variables, among those listed in Eqs.~(\ref{eq:nu}-\ref{eq:W2}) are required to provide a complete description of the process. The differential cross-section for the process $2 \rightarrow 1 + n_X$ in the FT frame is given by 
+Being a totally-inclusive process, no particular particles in the final state are detected. Hence, the total cross-section must take into account all the possible out-states, that is a sum over all the possible states $X$. For this reason, only two kinematic variables, among those listed in Eqs.~(\ref{eq:nu}-\ref{eq:W2}), are required to provide a complete description of the process. The differential cross-section for the process $2 \rightarrow 1 + n_X$ in the FT frame is given by 
 %%
 \begin{equation}
     d\sigma = \frac{1}{4 \qty|\vb{k}| M} \sum_{X} \qty| \mathcal{M} \qty( \ell N \rightarrow \ell'X ) |^2 \, \widetilde{d k'} \,  d\Phi_X \, ,
@@ -76,7 +76,7 @@ and $\widetilde{dP_X}$ is the Lorentz invariant phase-space measure
     \widetilde{d\, P_X} = \frac{d^3 \, P_X}{2 E_X (2\pi)^3} \,.
 \end{equation}
 %%
-An identical definition holds also for $\widetilde{d k'}$.  Since the measurements in inclusive DIS concern only the final lepton $\ell'$, one can integrate over the entire momentum space in the hadron state and thus rewrite eq. \eqref{eq:ch2:dsigma} as
+An identical definition holds also for $\widetilde{d k'}$.  Since measurements in inclusive DIS concern only the final lepton $\ell'$, one can integrate over the entire momentum space in the hadron state and thus rewrite eq. \eqref{eq:ch2:dsigma} as
 %%
 \begin{equation}
     \begin{split}
@@ -113,7 +113,7 @@ where $\theta$ is the angle between the incoming and the scattered leptons. Inse
     \label{eq:ch2:dsigma3}
 \end{equation}
 %%
-where $s = (k + P)^2 \approx 2 M E$ is the Mandelstam variable. This expression gives the differential cross-section as a function of the energy of the outgoing lepton $E'$ and the scattered solid angle $\Omega$, both evaluated in the FT frame. It is possible to express Eq.~\eqref{eq:ch2:dsigma3} in terms of the Lorentz invariant dimensionless variables Eqs.~[\ref{eq:x}-\ref{eq:y}] by performing the transformation $(E', \theta) \rightarrow (x,y)$, which leads to
+where $s = (k + P)^2 \approx 2 M E$ is the Mandelstam variable. This expression gives the differential cross-section as a function of the energy of the outgoing lepton $E'$ and the scattered solid angle $\Omega$, both evaluated in the FT frame. It is possible to express Eq.~\eqref{eq:ch2:dsigma3} in terms of the Lorentz invariant dimensionless variables Eqs.~(\ref{eq:x}, \ref{eq:y}) by performing the transformation $(E', \theta) \rightarrow (x,y)$, which leads to
 %%
 \begin{equation}
     \frac{d^3 \, \sigma}{dx \, dy \, d\varphi} = \frac{\alpha_{\textrm{em}}^2 y}{2 Q^4} L_{\mu\nu} W^{\mu\nu} \,,
@@ -124,7 +124,7 @@ where $\varphi$ is the azimuthal angle of the scatted lepton. It is worth noting
 
 %___________________________________________________________________________
 \subsection*{Leptonic tensor}
-The matrix element described by the lepton tensor can be decomposed into a symmetric and an antisymmetric part under $\mu \leftrightarrow \nu$ exchange. First, let us observe that the polarised spinor $u \qty(k, \, s)$, with polarisation vector $s$, satisfies the identity 
+The matrix element described by the lepton tensor can be decomposed into a symmetric and an antisymmetric part under $\mu \leftrightarrow \nu$ exchange. First, one may observe that the polarised spinor $u \qty(k, \, s)$, with polarisation vector $s$, satisfies the identity 
 %%
 \begin{equation}
     u \qty(k, \, s) \overline{u} \qty(k,\,s) = \frac{1}{2} (1 - \gamma_5 \slashed{s})  \qty(\slashed{p} + m)\,.
@@ -150,7 +150,7 @@ where $L_{\mu \nu}^{(S)}$ and $L_{\mu \nu}^{(A)}$ are the symmetric and antisymm
   L_{\mu \nu}^{(A)} \qty(k,\,s;\, k') = \frac{1}{2i} m_{\ell} s^{\lambda} \Trace \qty[  \gamma_{\mu} \gamma_{\nu} \gamma_{\lambda} \gamma_{\rho} \gamma_{5} ] \qty( k - k' )^{\rho} = 2m_{\ell} \epsilon_{\mu \nu \lambda \rho } s^{\lambda} \qty( k - k' )^{\rho}\,.
 \end{equation}
 %%
-If the momentum of the incoming lepton is aligned with the quantization axis, the spin vector can expressed as
+If the momentum of the incoming lepton is aligned with the quantization axis, the spin vector can be expressed as
 %%
 \begin{equation}
     s^{\mu} = \frac{\lambda_{\ell}}{m_{\ell}} k^{\mu}\, ,
@@ -168,7 +168,7 @@ where the mass term $m_{\ell}$ has been cancelled by the denominator of Eq.~\eqr
 
 %________________________________
 \subsection*{Hadronic tensor}
-The hadronic tensor $W^{\mu \nu}$ encodes information on the proton structure. It receives non-perturbative contributions and, for that reason, its analysis cannot be addressed by a fully perturbative approach in QCD. However, exploiting symmetry constraints, the tensor can be decomposed into four scalar structure functions: the unpolarised functions $F_{1,2}$ and the helicity-dependent functions $g_{1,2}$, as long as parity violation is not concerned. Usually, these functions are measured by experiments and compared with theoretical predictions. These strongly depend on the theoretical model adopted to compute the observable, as I will show.%
+The hadronic tensor $W^{\mu \nu}$ encodes information on the proton structure. It receives non-perturbative contributions and, for that reason, its analysis cannot be addressed by a fully perturbative approach in QCD. However, exploiting symmetry constraints, the tensor can be decomposed into four scalar structure functions: the unpolarised functions $F_{1,2}$ and the helicity-dependent functions $g_{1,2}$, as long as parity violation is not concerned. Usually, these functions are measured by experiments and compared with theoretical predictions.%
 
 In order to exploit symmetry constraints, I first rewrite the hadronic tensor as follows
 %%
@@ -187,10 +187,10 @@ In the first line of Eq.~\eqref{eq:ch2:hadronic_tensor} the momentum-conservatio
     \bra{P,S} j^{\dag}_{\mu}(0) \ket{X} =  \bra{P,S} e^{-i\hat{P}z} \, j^{\dag}_{\mu}(z) \, e^{i\hat{P}z} \ket{X} =  e^{-i z \cdot \qty(P - P_X )}\bra{P,S} j^{\dag}_{\mu}(z) \ket{X}\,.
 \end{equation}
 %%
-Finally, the last line follows from the closure relation $\sumint_{\;\; X} \ket*{X} \bra*{X} = 1 $. In sanalogy with the lepton case, the hadronic tensor can be decomposed into a symmetric and an antisymmetric part
+Finally, the last line follows from the closure relation $\sumint_{\;\; X} \ket*{X} \bra*{X} = 1 $. In analogy with the lepton case, the hadronic tensor can be decomposed into a symmetric and an antisymmetric part
 %%
 \begin{equation}
-    W_{\mu \nu} =  W_{\mu \nu} (q, \;P ) + i W_{\mu \nu} (q, \;P ; \; S ) \,.
+    W_{\mu \nu} =  W_{\mu \nu}^{(S)}  + i W_{\mu \nu}^{(A)}\,.
 \end{equation}
 %%
 Then, one can make the following observations:
@@ -201,7 +201,7 @@ Then, one can make the following observations:
     \item The antisymmetric part of the hadroninc tensor is expected to change under reverse of the nucleon polarisation, hence the antisymmetric part must be linear in the polarisation vector.
     \item The strong interaction is parity invariant.
 \end{enumerate}
-Exploiting these constraints one finally obtains the most general form of the hadronic tensor \cite{collins_2011}
+Exploiting these constraints, one finally obtains the most general form of the hadronic tensor \cite{collins_2011}
 %%
 \begin{equation}
   \begin{split}
@@ -218,7 +218,7 @@ Exploiting these constraints one finally obtains the most general form of the ha
   \end{split}
 \end{equation}
 %%
-The spin-independent coefficients $F_1,\, F_2$ and the spin-dependent ones $g_1,\,g_2$ are usually called \textit{structure functions} or \textit{form factors}. In the literature (see \textit{e.g.} Ref.~\cite{leader_2001,Anselmino:1994gn}), the hadronic tensor is also parametrised in terms of the fucntions $W_1 ,\, W_2$ and $G_1,\, G_2$, that are related with those in Eqs.[\ref{eq:ch2:had_tens_final_symm}-\ref{eq:ch2:had_tens_final_anti}] as follows:
+The spin-independent coefficients $F_1,\, F_2$ and the spin-dependent ones $g_1,\,g_2$ are usually called \textit{structure functions} or \textit{form factors}. In the literature (see \textit{e.g.} Ref.~\cite{leader_2001,Anselmino:1994gn}), the hadronic tensor is also parametrised in terms of the fucntions $W_1 ,\, W_2$ and $G_1,\, G_2$, that are related with those in Eqs.~(\ref{eq:ch2:had_tens_final_symm}-\ref{eq:ch2:had_tens_final_anti}) as follows:
 %%
 \begin{equation}
   F_1 (x, Q^2) = M W_1 (\nu, Q^2)\,, \hspace{5mm} F_2(x,Q^2) = \nu W_2 (\nu,Q^2)
@@ -247,7 +247,7 @@ The symmetric and antisymmetric parts of the hadronic tensor can be recast as\fo
 %%
 Is it worth noting that the above expressions describe the pure electromagnetic process mediated by a single virtual photon. The inclusion of both neutral- and charged-current at energies near (or higher) the weak boson masses introduces parity violating terms in the decomposition of the hadronic tensor. Hence, four additional scalar functions appear, usually called $F_3, \; g_3,\; g_4$ and $g_5$. The first one multiplies a term that is spin independent and also antisymmetric, whereas the other are multiplied by terms that are spin dependent and symmetric. Because of that, the correspondence by which the symmetric part, Eq.~\eqref{eq:ch2:had_tens_final_symm}, is spin independent and the antisymmetric one, Eq.~\eqref{eq:ch2:had_tens_final_anti}, is spin dependent no longer holds. The spin-dependent and -independent parts becomes a superposition of symmetric and antisymmetric contributions. The general decomposition for the hadronic tensor in DIS can be found \textit{e.g.} in Ref.~\cite{Anselmino:1993tc}.%
 
-In present measurements, the momentum transfer values of the lepton beams do not exceed  $Q^2 \approx 100 \; GeV^2$. Hence, contributions from a weak boson exchange can be safely neglected. However, future measurements may surpass this threshold and the most general decomposition for the hadronic tensor will become necessary. For instance, this will be the case of the future Electron Ion Collider (EIC) (see \textit{e.g.} Ref.~\cite{Borsa:2020lsz}), whose operation is expected to start in the 2030's.\par
+In present measurements, the momentum transfer values of the lepton beams do not exceed  $Q^2 \approx 100 \; GeV^2$. Hence, contributions from a weak boson exchange can be safely neglected. However, future measurements may surpass this threshold and the most general decomposition for the hadronic tensor will become necessary. For instance, this will be the case of the future Electron Ion Collider (EIC) (see \textit{e.g.} Ref.~\cite{Borsa:2020lsz}), whose operation is expected to start in the 2030s.
 
 \subsection{Polarised cross-section asymmetries}
 The insertion of the decompositions for both the leptonic and hadronic tensor into the differential cross-section Eq.~\eqref{eq:ch2:dsigma4} yields to 
@@ -266,7 +266,7 @@ In order to single out the spin dependent contribution (\textit{i.e.} the antisy
 %%
 where the contributions with the opposite target spins in the helicity-dependent part sum together, given that they are linear in the target spin.%
 
-In this Thesis, I only consider longitudinally polarised leptons with spin along $(\uparrow)$ or opposite $(\downarrow)$ the direction of motion, whereas the nucleon is at rest with polarisation along or opposite an \textit{arbitrary} direction $\vb*{S}$. Hence, in the target rest frame the nucleon spin four-vector can be parametrised as
+In this Thesis, I only consider longitudinally polarised leptons with spin along with $(\uparrow)$ or opposite to $(\downarrow)$ the direction of motion, whereas the nucleon is at rest with polarisation along or opposite an \textit{arbitrary} direction $\vb*{S}$. Hence, in the target rest frame the nucleon spin four-vector can be parametrised as
 %%
 \begin{equation}
   S^{\mu} = (0, \; \sin \alpha \cos\beta, \; \sin \alpha \sin \beta, \; \cos \alpha) \;,
@@ -403,7 +403,7 @@ and the kinematic factors have been defined as
   & d = D \frac{\sqrt{1 - y - \gamma^2 y^2 /4}}{1 - y/2}\,,
 \end{align}
 %%
-Here $\sigma_{1/2}^T$ and $\sigma_{3/2}^T$ represent the cross-sections for the forward virtual Compton scattering with a transversely polarised photon with total helicity of the photon-nucleon system equal to 1/2 and 2/3, respectively; $\sigma_{1/2}^{TL}$ represents the interference term between the longitudinal and transverse contributions to the photo-absorption cross-section (for more details, see Ref.~\cite{leader_predazzi_1996}). By inverting Eqs.~(\ref{eq:cs_diff_l},\ref{eq:cs_diff_t}) and using Eqs.~\eqref{eq:asymmetry} it is possible to express the structure functions in terms of $A_1$ and $A_2$ and obtain
+Here $\sigma_{1/2}^T$ and $\sigma_{3/2}^T$ represent the cross-sections for the forward virtual Compton scattering with a transversely polarised photon with total helicity of the photon-nucleon system equal to 1/2 and 2/3, respectively; $\sigma_{1/2}^{TL}$ represents the interference term between the longitudinal and transverse contributions to the photo-absorption cross-section (for more details, see Ref.~\cite{leader_predazzi_1996}). By inverting Eqs.~(\ref{eq:cs_diff_l}, \ref{eq:cs_diff_t}) and using Eqs.~\eqref{eq:asymmetry} it is possible to express the structure functions in terms of $A_1$ and $A_2$ and obtain
 %%
 %\begin{align}
  % & g_1(x,Q^2) = \frac{F_1(x,Q^2)}{(1+\gamma^2)(1 + \eta \zeta)} \left[ (1 + \gamma \zeta) \frac{A_{\parallel}}{D} - (\eta - \gamma) \frac{A_{\perp}}{d} \right] \,, \\
@@ -424,53 +424,54 @@ In principle, separate measurements of $A_{\parallel}$ and $A_{\perp}$ are neces
   \label{eq:A1}
 \end{equation}
 %%
-On the other hand, $g_2$ is determined by $A_{\perp}$ or $A_2$, even though it enters the analysis only as negligible small corrections, unless $Q^2$ is very small. However, kinematic cuts can be applied to the data set used in the PDF determination, so that the small-$Q^2$ region can be safely excluded. As I will discuss later in \chapref{ch:4}, the present analysis makes use of such kinematics cuts, and the only relevant observable is Eq.~\eqref{eq:A1}.
+On the other hand, $g_2$ is determined by $A_{\perp}$ or $A_2$, even though it enters the analysis only as negligible small corrections, unless $Q^2$ is very small. However, kinematic cuts can be applied to the data set used in the PDF determination, so that the small-$Q^2$ region can be safely excluded. As I will discuss later in \chapref{ch:4}, the present analysis makes use of such kinematic cuts, and the only relevant observable is Eq.~\eqref{eq:A1}.
 
 %_______________________________________________________
 \section{A look inside the hadronic tensor}
 
 The hadronic tensor $W_{\mu \nu}$ introduced in the previous section contains information about the structure of the nucleon and describes the interaction between the virtual photon and the composite nucleon. It has been parametrised in terms of four structure functions which can be in principle measured in DIS experiments.%
 
-Even though QCD is known to be \textit{asymptotically free}, the structure function does involve non-perturbative contributions, since the initial state (the nucleon) is not the fundamental degrees of freedom of the theory, but a bound state of quarks and gluons. Such a dependence is also present in the PM, even though it is introduced heuristically. I will show that the structure function $g_1$ can be expressed in terms of longitudinally polarised quark and gluon distributions. Moreover, it is possible to give a \textit{factorised} expression for the structure function $g_1$, which allows for the separation of a hard, perturbative and process dependent part from a low-energy, universal contribution. The former can be worked out by computing the diagrams in perturbative QCD, whereas the latter is given by the PDFs, which parametrise the inner structure of the proton.%
+Even though QCD is known to be \textit{asymptotically free}, the structure function does involve non-perturbative contributions, since the initial state (the nucleon) is not the fundamental degrees of freedom of the theory, but a bound state of quarks and gluons. Such a dependence is also present in the PM, even though it is introduced heuristically. I will show that the structure function $g_1$ can be expressed in terms of longitudinally polarised quark and gluon distributions. Moreover, it is possible to give a \textit{factorised} expression for the structure function $g_1$, which allows for the separation of a hard, perturbative and process dependent part from a low-energy, universal contribution. The former can be worked out by computing Feynman diagrams in perturbative QCD, whereas the latter is given by the PDFs, which parametrise the inner structure of the proton.%
 
-Before moving on the framework of QCD, in this section I will first make use of the PM which gives an intuitive description, though not exhaustive, of nucleon structure. If nothing else, it also provides the first historical approach to the puzzle of the nucleon structure. Then, the same results will be retrieved by the QCD at LO, while higher order corrections will improve the accuracy and also introduce other contributions (such as the gluon and the sea quarks) not considered in the PM.
+Before moving on the framework of QCD, in this section I will first make use of the PM which gives an intuitive description, though not exhaustive, of nucleon structure. If nothing else, it also provides the first historical approach to the puzzle of the nucleon structure. Then, the same results will be retrieved by QCD at LO, while higher order corrections will improve the accuracy and also introduce other contributions (such as the gluon and the sea quarks) not considered in the PM.
 
 
-\subsection{The hadronic tensor in the Naive Parton Model}
+\subsection{The hadronic tensor in the Parton Model}
 \label{subsec:PM_hadronic_tensor}
-The Parton Model was initially formulated by Feynman \cite{PhysRevLett.23.1415} and formalized by Bjorken and Paschos \cite{PhysRev.185.1975} with the intention of providing a microscopic description of DIS before the advent of QCD. The idea relies on the infinite-momentum frame of reference for the proton, which coincides with the ceneter-of-mass frame in high-energy DIS experiments. When viewed from this frame, the proton results Lorentz-contracted into a thin shape in the direction of the motion, so that the incident lepton scatters instantaneously from the individual constituents. Moreover, time dilation implies that the last interaction of the constituents occurred far away in time, so that it is possible to neglect the interactions that bind the constituents into a hadron. Based on this picture, the parton model asserts that inclusive DIS can be approximated as an incoherent sum of lepton-constituent quark interactions. Furthermore, the incoming and outgoing partons can be considered as massless free particles, in so far the momentum transfer $Q$ is large. In the infinite-momentum frame the transversal momentum can be neglected, as it is of order $M^2/Q$ (see \textit{e.g.} Ref.~\cite{collins_2011}). Thus, partons are considered to carry only a fractional momentum $\xi$ of the parent nucleon.\par
+The PM was initially formulated by Feynman \cite{PhysRevLett.23.1415} and formalized by Bjorken and Paschos \cite{PhysRev.185.1975} with the intention of providing a microscopic description of DIS before the advent of QCD.%
+
+The idea relies on the infinite-momentum frame of reference for the proton, which coincides with the ceneter-of-mass frame in high-energy DIS experiments. When viewed from this frame, the proton results Lorentz-contracted into a thin shape in the direction of motion, so that the incident lepton scatters instantaneously from the individual constituents. Moreover, time dilation implies that the last interaction of the constituents occurred far away in time, so that it is possible to neglect the interactions that bind the constituents into a hadron. Based on this picture, the PM asserts that inclusive DIS can be approximated as an incoherent sum of lepton-constituent quark interactions. The incoming and outgoing partons can be considered as massless free particles, in so far the momentum transfer $Q$ is large. In the infinite-momentum frame the transversal momentum can be neglected, as it is of order $M^2/Q$ (see \textit{e.g.} Ref.~\cite{collins_2011}). Thus, partons are considered to carry only a fractional (collinear) momentum $\xi$ of the parent nucleon.\par
 Going into the details, the PM asserts that the cross-section can be computed as
 %%
 \begin{equation}
-  \frac{d^2 \sigma}{dx dy} = \sum_{q} e_q^2 \int d\xi \;f_q (\xi) \frac{d \hat{\sigma}}{dy}\,,
+  \frac{d^2 \sigma}{dx dy} = \sum_{f\bar{f}} e_f^2 \int d\xi \;f (\xi) \frac{d \hat{\sigma}}{dy}\,,
   \label{eq:PM_CS}
 \end{equation}
 %%
-where $d \hat{\sigma}$ is the parton level cross-section for the elementary QED process $\ell \; q \rightarrow \ell' \; q$ and $f_q$ is the PDF, that is the probability density distribution of finding a parton of type $q$ with nucleon momentum fraction $\xi$. For polarised cross-section asymmetries, one should write
+where $d \hat{\sigma}$ is the parton level cross-section for the elementary QED process $\ell \; q \rightarrow \ell' \; q$ and $f(\xi)$ is the PDF, that is the probability density distribution of finding a parton of flavour $f$ with nucleon momentum fraction $\xi$. The sum runs over all quark $f$ and antiquark $\bar{f}$ flavours that actively participate in the interaction ($f = u,\, d,\, s$ and $\bar{f} = \bar{u},\, \bar{d},\, \bar{s}$). For polarised cross-section asymmetries, one should write
 %%
 \begin{equation}
-  \frac{d \sigma^{\uparrow \Uparrow}}{dx dy} - \frac{d \sigma^{\uparrow \Downarrow}}{dx dy} = \sum_{q} e_q^2 \int d\xi \; \Delta f_q (\xi) \left[ \frac{d \Delta \sigma^{\uparrow \uparrow}}{dy} - \frac{d \Delta \sigma^{\uparrow \downarrow}}{dy} \right]
+  \frac{d \sigma^{\uparrow \Uparrow}}{dx dy} - \frac{d \sigma^{\uparrow \Downarrow}}{dx dy} = \sum_{f\bar{f}} e_f^2 \int d\xi \; \Delta f (\xi) \left[ \frac{d \Delta \sigma^{\uparrow \uparrow}}{dy} - \frac{d \Delta \sigma^{\uparrow \downarrow}}{dy} \right]
   \label{eq:PM_fact}
 \end{equation}
 %%
-where $d \sigma^{\lambda_{\ell} \, \lambda_{q}}$ is the elementary cross-section with helicity states of the incoming lepton, $\lambda_{\ell}$, and of he struck parton, $\lambda_{q}$. Here, I have also introduced the helicity-dependent, or polarised PDFs, $\Delta f_{q}$, defined as the momentum densities of partons with spin parallel or antiparallel to the longitudinally polarised parent nucleon:
+where $d \sigma^{\lambda_{\ell} \, \lambda_{f}}$ is the elementary cross-section with helicity states of the incoming lepton, $\lambda_{\ell}$, and of he struck parton, $\lambda_{f}$. Here, I have also introduced the helicity-dependent, or polarised PDFs, $\Delta f$, defined as the momentum densities of partons with spin parallel or antiparallel to the longitudinally polarised parent nucleon:
 %%
 \begin{equation}
-  \Delta f_{q} (\xi) = f_{q}^{\uparrow}(\xi) - f_{q}^{\downarrow}(\xi) \,.
+  \Delta f (\xi) = f^{\uparrow}(\xi) - f^{\downarrow}(\xi) \,.
 \end{equation}
 %%
-The Eq.~\eqref{eq:PM_CS} also affects the expression for the hadronic tensor. Instead of a factor $1/s$ entering Eq.~\eqref{eq:ch2:dsigma3}, at the partonic level there is instead a factor $1/\xi s$, since the squared center-of-mass energy of the lepton-parton scattering is $(xP + q)^2 \approx 2 \xi \, P \cdot q$. Hence, the parton model expression for the antisymmetric part of the hadronic tensor is
+The Eq.~\eqref{eq:PM_CS} also affects the expression for the hadronic tensor. Instead of a factor $1/s$ entering Eq.~\eqref{eq:ch2:dsigma3}, at the partonic level there is instead a factor $1/\xi s$, since the squared center-of-mass energy of the lepton-parton scattering is $(xP + q)^2 \approx 2 \xi \, P \cdot q$. Hence, the PM expression for the antisymmetric part of the hadronic tensor is
 %%
 \begin{equation}
-  W^{(A) \mu \nu}= \sum_{q} e_q^2\int \frac{d \xi}{\xi} \; \Delta f_{q} (\xi) \Delta \mathcal{C}^{\mu \nu}_{q} (x,q,s) \, \delta((p + q)^2) \,,
+  W^{(A) \mu \nu}= \sum_{f\bar{f}} e_f^2\int \frac{d \xi}{\xi} \; \Delta f (\xi) \Delta \mathcal{C}^{\mu \nu}_{f} (\xi; \,q,s) \, \delta((p + q)^2) \,,
   \label{eq:had_tens_PM}
 \end{equation}
 %%
-where the $\delta$-function has been introduced to account for the mass-shellness of the outgoing parton. 
-In Eq.~\eqref{eq:had_tens_PM}, $\Delta \mathcal{C}^{\mu \nu}_{q}$ represents the matrix element of the photon-parton interaction that can be computed at the lowest order in Quantum Electrodynamics (QED):
+where the $\delta$-function has been introduced to account for the mass-shellness of the outgoing parton. In Eq.~\eqref{eq:had_tens_PM}, $\Delta \mathcal{C}^{\mu \nu}_{f}$ represents the matrix element of the photon-parton interaction that can be computed at the lowest order in QED:
 %%
 \begin{equation}
-  \Delta \mathcal{C}_q^{\mu \nu} (x,q,s) = - 2 m_q \varepsilon_{\mu \nu \alpha \beta} s^{\alpha} q^{\beta}\,.
+  \Delta \mathcal{C}_f^{\mu \nu} (\xi; q,s) = \Delta \mathcal{C}_f^{\mu \nu} (q,s)  = - 2 m_q \varepsilon_{\mu \nu \alpha \beta} s^{\alpha} q^{\beta}\,.
   \label{eq:DeltaC}
 \end{equation}
 %%
@@ -498,7 +499,7 @@ One can extract the structure functions from the hadronic tensor Eqs.~(\ref{eq:c
 By taking a proper combination of the two projections, one obtains the important results
 %%
 \begin{align}
-  &g_1(x) \hspace{1mm} = \hspace{1mm} \frac{1}{2} \sum_{q} e_q^2 \Delta f_{q} (x, S) \,,
+  &g_1(x) \hspace{1mm} = \hspace{1mm} \frac{1}{2} \sum_{f} e_f^2 \Delta f (x, S) \,,
   \label{eq:g1_PM}\\
   &g_2 (x) \hspace{1mm} = \hspace{1mm} 0\,.
   \label{eq:g2_PM}
@@ -513,10 +514,10 @@ Alternatively, one can obtain these results by computing the partonic-level cros
 such that when inserted into Eq.~\eqref{eq:PM_CS} lead to the expression
 %%
 \begin{equation}
-  \frac{d \sigma^{\uparrow \Uparrow}}{dx dy} - \frac{d \sigma^{\uparrow \Downarrow}}{dx dy} = \frac{4 \pi \alpha_{em}^2}{Q^2} \left[ \sum_{q} e_q^2 \Delta f_{q}(x) (2-y)\right] \,,
+  \frac{d \sigma^{\uparrow \Uparrow}}{dx dy} - \frac{d \sigma^{\uparrow \Downarrow}}{dx dy} = \frac{4 \pi \alpha_{em}^2}{Q^2} \left[ \sum_{f} e_f^2 \Delta f(x) (2-y)\right] \,,
 \end{equation}
 %%
-When compared with Eq.~\eqref{eq:cs_diff_l}, provided that the latter is integrated over the azimuthal angle $\varphi$ and the terms $\mathcal{O}(\gamma^2)$ are neglected, one obtains the same results reported in Eqs.~[\ref{eq:g1_PM}-\ref{eq:g2_PM}].\par
+When compared with Eq.~\eqref{eq:cs_diff_l}, provided that the latter is integrated over the azimuthal angle $\varphi$ and the terms $\mathcal{O}(\gamma^2)$ are neglected, one obtains the same results reported in Eqs.~(\ref{eq:g1_PM}-\ref{eq:g2_PM}).\par
 If an exact $SU(3)_f$ flavour symmetry is assumed, only the quarks $u,d,$ and $s$ and the relative antiquarks contribute to the structure function $g_1$, that is
 %%
 \begin{equation}
@@ -551,27 +552,27 @@ Under the same $SU(3)_f$ symmetry group, the linear combinations $\Delta \Sigma,
 %In doing so, the structure function $g_2$ assumes a non-zero value. Still, the PM framework is not able to give an unambiguous prescription to calculate $g_2$, providing different results that are generally incompatible with each other. One reason for that is that the structure function $g_2$ is extremely sensitive to the difference between the masses $m_q$ of the approximatively free quarks if compared with that of the bound quark $m$. In the special case of longitudinal polarisation, this difference does not make any relevant alteration in the analysis, yielding the results shown in Eqs.~[\ref{eq:g1_PM}-\ref{eq:g2_PM}]. However, this is no longer true when the transverse spin is relevant, motivating the high sensitivity on the mass difference for $g_2$. Furthermore, if one sets $m \neq m_{q}$, the expression for the antisymmetric part of the hadronic tensor is not gauge invariant ($q^{\mu} W_{\mu \nu}^{(A)} \neq 0$). The gauge invariance is restored when only a field theoretic approach is adopted \cite{Anselmino:1993tc}.\par
 
 \subsection*{Sum rules and spin crisis}
-An important tool that can be used in parton determination are the moments structure functions, since they can be related to measurable quantities like the total momentum fraction carried by quarks or the total contribution of quark spin to the spin of the nucleon. Moreover, the Wilson Operator Product Expansion (OPE) can be applied to the Fourier transform of the nucleon matrix element of the electromagnetic current that appears in the hadronic tensor $W^{\mu \nu}$, Eq.~\eqref{eq:ch2:hadronic_tensor}. This affects the functional form of the moments of the structure functions. In fact, if the fields that enter the electromagnetic current are treated as free fields (\textit{i.e.} one adopts the PM picture), the first moment of the structure function $g_1$ can be expressed as\footnote{\footnote If the hypothesis of free fields is not assumed, then the coefficients that multiply the $a_i$ receive $Q^2$-dependent corrections that are calculable in perturbative QCD. However, their consideration does not affect the present discussion.}
+An important tool that can be used in parton determination are the moments structure functions. They can be related to measurable quantities like the total momentum fraction carried by quarks or the total contribution of quark spin to the spin of the nucleon. Moreover, the Wilson Operator Product Expansion (OPE) can be applied to the Fourier transform of the nucleon matrix element of the electromagnetic current that appears in the hadronic tensor $W^{\mu \nu}$, Eq.~\eqref{eq:ch2:hadronic_tensor}. This affects the functional form of the moments of the structure functions. In fact, if the fields that enter the electromagnetic current are treated as free fields (\textit{i.e.} one adopts the PM picture), the first moment of the structure function $g_1$ can be expressed as\footnote{\footnotesize If the hypothesis of free fields is not assumed, then the coefficients that multiply the $a_i$ receive $Q^2$-dependent corrections that are calculable in perturbative QCD. However, their consideration does not affect the present discussion.}
 %%
 \begin{equation}
   \Gamma_{1}^{p} = \int_{0}^{1} dx \, g_{1}^{p}(x) = \frac{1}{12} \left\{ a_3 + \frac{1}{\sqrt{3}} a_8 + \frac{4}{3} a_{0} \right\}\,,
   \label{eq:g1_m1}
 \end{equation}
 %%
-where the $a_i$ are hadronic matrix elements of the axial-vector currents $J^{i}_{5 \mu}$ ($i=1,\dots,8$) of the octet of $SU(3)_{f}$ and of the flavour singlet axial current $J^{0}_{5 \mu}$, taken between proton states of definite momentum and spin. It can be shown (see \textit{e.g.} Ref.~\cite{Anselmino:1993tc} and references therein) that $a_{3,8}$ are related to the two constants, $F$ and $D$, measured in the hyperon $\beta$-decay
+where the $a_i$ are hadronic matrix elements of the axial-vector currents $J^{i}_{5 \mu}$ ($i=1,\dots,8$) of the octet of $SU(3)_{f}$ and of the flavour singlet axial current $J^{0}_{5 \mu}$, taken between proton states of definite momentum and spin. It can be shown (see \textit{e.g.} Ref.~\cite{Anselmino:1994gn} and references therein) that $a_{3,8}$ are related to two constants, $F$ and $D$, measured in the hyperon $\beta$-decay
 %% 
 \begin{align}
   & a_3 = F + D \,, \\
   & a_8 = \frac{1}{\sqrt{3}} (3F - D)\,.
 \end{align}
 %%
-Hence, measurements of $\Gamma_{1}^{p}$ provide an estimation of the matrix element $a_0$ by simply inverting Eq.~\eqref{eq:g1_m1}
+Hence, measurements of $\Gamma_{1}^{p}$ provide an estimate of the matrix element $a_0$ by simply inverting Eq.~\eqref{eq:g1_m1}
 %%
 \begin{equation}
   a_0 =  \frac{3}{4} \left\{ 12 \Gamma_{1}^p - a_3 - \frac{1}{\sqrt{3}} a_8 \right\}\,.
 \end{equation}
 %%
-These relations become relevant when, in the framework of the naive PM, the hadronic matrix elements are expressed in terms of the polarised parton distributions~\cite{Anselmino:1993tc}, providing
+These relations become relevant when, in the framework of the naive PM, the hadronic matrix elements are expressed in terms of the polarised parton distributions~\cite{Anselmino:1994gn}, providing
 %%
 \begin{align}
   & a_0 \equiv \Delta \Sigma = \int_{0}^{1} dx \, \Delta \Sigma(x) \,, 
@@ -584,7 +585,7 @@ These relations become relevant when, in the framework of the naive PM, the hadr
   \label{eq:a8_PM}
 \end{align}
 %%
-It is worth remarking that the results I have just obtained, Eqs.~(\ref{eq:a0_NPM}-\ref{eq:a8_PM}), rely on the assumption of exact $SU(3)_f$ flavour symmetry and on the conservation of the related currents. By looking at the physical significance of $\Delta \Sigma (x)$, it follows that
+It is worth remarking that the results I have just obtained, Eqs.~(\ref{eq:a0_NPM}-\ref{eq:a8_PM}), rely on the assumption of exact $SU(2)_f$ and $SU(3)_f$ flavour symmetries and on the conservation of the related currents. By looking at the physical significance of $\Delta \Sigma (x)$, it follows that
 %%
 \begin{equation}
   a_0 = \Delta \Sigma \equiv 2 \left< S_{z}^{\T{quarks} + \T{antiquarks}} \right> \,.
@@ -601,17 +602,19 @@ Since the transverse parton momentum is zero, the orbital angular momentum carri
 In the 80's the EMC collaboration measured the total contribution of quarks and antiquarks to the spin of the proton \cite{EuropeanMuon:1989yki} using Eq.~\eqref{eq:a0_Sz}. Surprisingly, instead of the expected result Eq.~\eqref{eq:J_z_NPM}, they obtaiend
 %%
 \begin{equation}
-  \left< S_{z}^{\T{quarks} + \T{antiquarks}} \right> = 0.03 \pm 0.06 \pm 0.09 \,,
+  \left< S_{z}^{\T{quarks} + \T{antiquarks}} \right> = 0.060 \pm 0.047 \, (\T{stat}) \pm 0.069 \, (\T{syst}) \,,
   \label{eq:EMC_exp}
 \end{equation}
 %% 
-opening the "spin crisis" in the Parton Model \cite{Leader_Anselmino}. However, as pointed in Ref.~\cite{Leader:2016sli}, the  crisis was nothing but a consequence of the lack of understanding in the theory of strong interactions. 
+opening the \quotes{spin crisis} in the PM \cite{Leader_Anselmino}. However, as pointed in Ref.~\cite{Leader:2016sli}, the  crisis was nothing but a consequence of the lack of understanding in the theory of strong interactions. 
 
 %___________________________________________________________________________
 \subsection{The Field Theoretic Model}
 \label{sec:field_theoretic}
 
-The heuristic approach paved the ground for the development of QCD. However, the calculations did not lead to coherent predictions when compared to experimental data, as I have just discussed. The adoption of QCD as the theory of strong interaction provides a more accurate description of the experimental results. Moreover, the accuracy increases with increasing perturbative order of the Feynman diagrams. At Born level the interaction is represented by the tree-level scattering of a quark (or antiquark) off the virtual photon $\gamma^{*}$. This coincides with the PM expectation. At higher order, QCD introduces several new contributions, which can be computed perturbatively. For instance, at $\mathcal{O}(\alpha_{s})$, the Feynman diagrams include the emission of a gluon, the one-loop corrections, and the process initiated by a gluon which then splits into a quark-antiquark pair, the so-called photon-gluon fusion process. In general, QCD interactions affect the predictions by two main features
+The heuristic approach of the parton model paved the ground for the development of QCD. However, the calculations did not lead to coherent predictions when compared to experimental data, as I have just discussed.%
+
+The adoption of QCD as the theory of strong interaction provides a more accurate description of the experimental results. Moreover, the accuracy increases with increasing perturbative order of the Feynman diagrams. At Born level the interaction is represented by the tree-level scattering of a quark (or antiquark) off the virtual photon $\gamma^{*}$. This coincides with the PM expectation. At higher order, QCD introduces several new contributions, which can be computed perturbatively. For instance, at $\mathcal{O}(\alpha_{s})$, the Feynman diagrams include the emission of a gluon, the one-loop corrections, and the process initiated by a gluon which then splits into a quark-antiquark pair, the so-called photon-gluon fusion process. In general, QCD interactions affect the predictions by two main features
 \begin{enumerate}
   \item They introduce a perturbative calculable logarithmic $Q^2$ dependence in the parton densities.
   \item QCD naturally introduces the polarised gluon contribution to $g_1$.  
@@ -628,7 +631,7 @@ These two effects are now discussed.
 %%
 
 \subsubsection*{Perturbative corrections and the evolution equation}
-The inclusion of gluonic corrections to the Born level introduces divergent contributions. These divergent terms arise from the so-called \textit{mass} or \textit{collinear} singularities that occur because of the effective masslessness of the quarks and are removed by the \textit{factorisation} process. The \textit{factorisation theorem} for DIS~\cite{Collins:1989gx} allows for a separation of the interaction into a 'hard' perturbative part $H^{\mu \nu}_{\alpha \beta}$ (the top 'blob') and a 'soft' non-perturbative part $\Phi_{\alpha \beta}$, represented by the "top" and "bottom" blobs of Fig.~\ref{fig:DIS_FT}, respectively. Schematically, the computation of the hard part gives origin to terms of the form $\alpha_{s} \ln Q^2/m_q^2$, which are split as follows
+The inclusion of gluonic corrections to the Born level introduces divergent contributions. These divergent terms arise from the so-called \textit{mass} or \textit{collinear} singularities due to the effective masslessness of quarks and are removed by the \textit{factorisation} process. The \textit{factorisation theorem} for DIS~\cite{Collins:1989gx} allows for a separation of the interaction into a 'hard' perturbative part $H^{\mu \nu}_{\alpha \beta}$ (the top 'blob') and a 'soft' non-perturbative part $\Phi_{\alpha \beta}$, represented by the "top" and "bottom" blobs of Fig.~\ref{fig:DIS_FT}, respectively. Schematically, the computation of the hard part gives origin to terms of the form $\alpha_{s} \ln Q^2/m_q^2$, which are split as follows
 %-------------------------------
 \footnote{Here the divergent contribution is given by the mass term inside the logarithm. However, this term arises only when the computation of the hard part is worked out keeping a non-vanishing mass for the quark. Otherwise, the singularity arises as an infrared logarithmic divergence of the type $\alpha_{s} \ln Q^2/\mathcal{K}^2$, where $\mathcal{K}$ is the cut-off in momentum space.}
 %-------------------------------
@@ -679,11 +682,11 @@ The variation with $Q^2$ is controlled by the Dokshitzer, Gribov, Lipatov, Altar
     \Delta q_i \\
     \Delta g \\
     \Delta \bar{q}_i
-  \end{matrix} \right) (x,Q^2) \,,
+  \end{matrix} \right) (x,Q^2) \,.
   \label{eq:DGLAP_coupled}
 \end{equation}
 %%
-where $k,l$ run over the quark flavours ($k,l = u,\, d\, s,\, \dots$) and $\otimes$ is the shorthand notation for the convolution product with respect to x
+Here, I am using a different notation for polarised PDFs, indicating with $\Delta q_i$ the $i$-th parton density. The indices $k,l$ run over the quark flavours ($k,l = u,\, d\, s,\, \dots$) and $\otimes$ is the shorthand notation for the convolution product with respect to $x$:
 %%
 \begin{equation}
   f \otimes g = \int_{x}^{1} \frac{dy}{y} f \left(\frac{x}{y} \right) g(y) \,.
@@ -750,7 +753,7 @@ where the dependence on the kinematic has been momentarily omitted. Now the equa
   \begin{split}
      \Delta \Sigma \equiv \sum_{k=1}^{n_{f}} \Delta q_{k}^{+}  \hspace{10mm} & \T{singlet distribution}\, ,\\
      \Delta V \equiv \sum_{k=1}^{n_{f}} \Delta q_{k}^{-}  \hspace{10mm} & \T{valence distribution}\,, \\
-     \Delta q_{NS,is}^{\pm} \equiv \Delta q_{i}^{\pm} - \Delta q_{j}^{\pm} \hspace{10mm} & \T{non-singlet distribution} \,,
+     \Delta q_{NS,ij}^{\pm} \equiv \Delta q_{i}^{\pm} - \Delta q_{j}^{\pm} \hspace{10mm} & \T{non-singlet distribution} \,,
   \end{split}
   \label{eq:evb_dist}
 \end{equation}
@@ -818,10 +821,10 @@ Finally, a little complementary observation about the factorisation theorem. In 
 There are two types of twist corrections -- target mass corrections, which are purely kinematical, and dynamical corrections. Regardless the origin of these contributions, they can be neglected by means of kinematic cuts applied to the data set, so that the small-$Q^2$ region is excluded. Kinematic cuts will be further discussed in Chap.~\ref{ch:4}, where the data sets will be presented.
 
 \subsubsection*{The gluon contribution to $g_1$}
-Another important consequence of the QCD analysis is the rise of the contribution from polarised gluons to the structure function $g_1$. Indeed, the leading-twist expression becomes 
+Another important consequence of the QCD analysis is the inclusion of the polarised gluon contribution to the structure function $g_1$. Indeed, the leading-twist expression becomes 
 %%
 \begin{equation}
-  g_1(x,Q^2) = \frac{1}{2} \sum_{i=1}^{n_f} e_{q}^2 \Biggl\{ \Delta \mathcal{C}_{q} \otimes \Bigl[ \Delta q_i (x,Q^2) + \Delta \bar{q}_i (x,Q^2) \Bigr] + \Delta \mathcal{C}_{g} \otimes \Delta g (x,Q^2)\Biggr\} \,,
+  g_1(x,Q^2) = \frac{1}{2} \sum_{f}^{n_f} e_{f}^2 \Biggl\{ \Delta \mathcal{C}_{f} \otimes \Bigl[ \Delta f (x,Q^2) + \Delta \bar{f} (x,Q^2) \Bigr] + \Delta \mathcal{C}_{g} \otimes \Delta g (x,Q^2)\Biggr\} \,,
   \label{eq:g1_QFT}
 \end{equation}
 %%
@@ -834,7 +837,7 @@ where the gluon contribution is defined as
 In Eq.~\eqref{eq:g1_QFT}, the sum runs over the flavours of quarks and antiquarks, $\otimes$ denotes the usual convolution in Eq.~\eqref{eq:def_conv}, and finally $\Delta \mathcal{C}_{q}$ and $\Delta \mathcal{C}_{g}$ are the \textit{coefficient functions} which are related to the hard photon-quark or photon-gluon cross-sections. Coefficient functions are perturbative quantities and can be expanded in a power series of $\alpha_s$
 %%
 \begin{equation}
-  \Delta \mathcal{C} \left( y, \alpha_s \right) = \Delta \mathcal{C}^{(0)}_{p} (y) + \frac{\alpha_s}{4\pi} \Delta \mathcal{C}^{(1)}_{p} (y) + \mathcal{O}(\alpha_s^2)\,,
+  \Delta \mathcal{C} \left( y, \alpha_s \right) = \Delta \mathcal{C}^{(0)} (y) + \frac{\alpha_s}{4\pi} \Delta \mathcal{C}^{(1)} (y) + \mathcal{O}(\alpha_s^2)\,,
 \end{equation}
 %% 
 where $p=q,g$ and
@@ -842,13 +845,14 @@ where $p=q,g$ and
 \begin{equation}
   \left\{ \hspace{-3mm}
   \begin{array}{cl}
-    &\Delta \mathcal{C}_{q}^{(0)} (y) = \delta(1-y)\,,\\[10pt]
+    &\Delta \mathcal{C}_{f}^{(0)} (y) = \delta(1-y)\,,\\[10pt]
     &\Delta \mathcal{C}_{g}^{(0)} (y) = 0 \,.\\
   \end{array}
   \right.
 \end{equation}
 %%
-At the lowest order, the gluon distribution does not contribute to the structure function, hence the Naive Parton Model expectation, Eq.~\eqref{eq:g1_PM}, is recovered. At higher orders, the simple and intuitive picture provided by the PM no longer holds, and the Bjorken variable $x$ loses its interpretation as fractional momentum.\par
+At the lowest order, the gluon distribution does not contribute to the structure function, hence the PM expectation, Eq.~\eqref{eq:g1_PM}, is recovered. At higher orders, the simple and intuitive picture provided by the PM no longer holds, and the Bjorken variable $x$ loses its interpretation as fractional momentum. Coefficient functions for polarised DIS have been computed up to NNLO in Ref.~\cite{Zijlstra:1993sh}.
+
 Now that I have introduced the polarised gluon distribution, it is possible to revise the unexpected result, Eq.~\eqref{eq:EMC_exp}. In the PM, the axial current $a_0$ can be regarded as the spin quark operator, since it is related to the first moment of the singlet quark distribution. The key point is that the axial current $a_0$ is conserved only in a massless and \textit{free-field} theory. However, when one allows for interactions among quarks, the current is no longer conserved, even when the masses of partons are neglected. In principle, one should not be worried about that, given that the conserved quantity is the total angular momentum $J_z$ and not $S_z$, so that the physical interpretation of $a_0$ as the spin operator of quark remains valid. However, it turns out that the current is not conserved because of an anomalous contribution coming from the triangle diagram that arises from the axial gluon current. This suggests that an additional contribution to the proton spin has not been considered in the expectation value of the axial current in the PM.%
 
 It can be shown (see \textit{e.g.} Ref.~\cite{Anselmino:1993tc}) that the gluon contribution to the structure function $g_1$ modifies the expectation value of the singlet axial current by a term that reads
@@ -864,7 +868,9 @@ where $n_{f}$ indicates the number of active flavours that effectively participa
   \label{eq:a0_gluon}
 \end{equation}
 %%
-where I have considered $n_f = 3$ active flavours. Here, $\Delta \Sigma(Q^2)$, $\Delta g(Q^2)$ represent the first moment of the singlet and gluon distributions, respectively. What the EMC experiment actually measured was the total singlet axial charge $a_0$. The l.h.s. of this expression has the fundamental implication that the small measured value of $a_0$ can now be explained as a cancellation between the two terms, reconciling the discrepancy between the EMC result and the theoretical expectation.\par Now, as a general rule, the PM can be derived from perturbative QCD in the limit $Q^2 \rightarrow \infty$, since the running coupling $\alpha_s$ vanishes and the free-theory is recovered. However, an exception to this rule is the gluon contribution in Eq.~\eqref{eq:a0_gluon}. Even though $a_{0}^{\T{gluons}}$ may be seen as a perturbative correction to $a_0$, the gluon contribution does not decouple in the limit $Q \rightarrow \infty$. Indeed, it can be shown either from the spin-dependent DGLAP evolution equations~\cite{Borah:2012ey} or from the anomalous dimensions of the operators involved~\cite{Anselmino:1994gn}, that the logarithmic decrease of $\alpha_s$ as $Q^2 \rightarrow \infty$ is compensated by the increase in the gluon helicity distribution. This is a direct consequence of the contribution induced by the axial anomaly in the triangle diagram. Furthermore, the initial physical interpretation of $\Delta \Sigma (Q^2)$ relied on the conservation of the singlet axial current $a_0$. There is no reason for the first moment of the singlet distribution to coincide with the value of the constituent quark model once the current is not conserved. This inconsistency is also made clearer by the fact that the first moment of the singlet distribution, being related to a not conserved quantity, acquires a scale dependence, that reifies in a $Q^2$ dependence. It is then clear that an observable quantity, such as the spin of the quarks, cannot depend on an in-principle arbitrary quantity such as the scale, making the physical significance of the singlet quark distribution $\Delta \Sigma(x,Q^2)$ a matter of a careful definition, as I will explain later.%
+where I have considered $n_f = 3$ active flavours. Here, $\Delta \Sigma(Q^2)$, $\Delta g(Q^2)$ represent the first moment of the singlet and gluon distributions, respectively. What the EMC experiment actually measured was the total singlet axial charge $a_0$. The l.h.s. of this expression has the fundamental implication that the small measured value of $a_0$ can now be explained as a cancellation between the two terms, reconciling the discrepancy between the EMC result and the theoretical expectation.\par Now, as a general rule, the PM can be derived from perturbative QCD in the limit $Q^2 \rightarrow \infty$, since the running coupling $\alpha_s$ vanishes and the free-theory is recovered. However, an exception to this rule is the gluon contribution in Eq.~\eqref{eq:a0_gluon}. Even though $a_{0}^{\T{gluons}}$ may be seen as a perturbative correction to $a_0$, the gluon contribution does not decouple in the limit $Q \rightarrow \infty$. Indeed, it can be shown either from the spin-dependent DGLAP evolution equations~\cite{Borah:2012ey} or from the anomalous dimensions of the operators involved~\cite{Anselmino:1994gn}, that the logarithmic decrease of $\alpha_s$ as $Q^2 \rightarrow \infty$ is compensated by the increase in the gluon helicity distribution. This is a direct consequence of the contribution induced by the axial anomaly in the triangle diagram.%
+
+The initial physical interpretation of $\Delta \Sigma (Q^2)$ relied on the conservation of the singlet axial current $a_0$. There is no reason for the first moment of the singlet distribution to coincide with the value of the constituent quark model once the current is not conserved. This inconsistency is also made clearer by the fact that the first moment of the singlet distribution, being related to a not conserved quantity, acquires a scale dependence, that reifies in a $Q^2$ dependence. It is then clear that an observable quantity, such as the spin of the quarks, cannot depend on an in-principle arbitrary quantity such as the scale, making the physical significance of the singlet quark distribution $\Delta \Sigma(x,Q^2)$ a matter of a careful definition, as I will explain later.%
 
 Finally, it is possible to give a rough estimate of the gluon helicity. The expected spin contribution carried by quarks is $\Delta \Sigma \simeq (0.6  \div 0.7)$. To accomplish the huge cancellation enclosed in the singlet axial charge, the gluon contribution at $Q^2 \simeq 10 \, \T{GeV}^2$ should be $\Delta g \simeq 4$. Despite the large value, it cannot be ruled out in that the QCD evolution equations increase indefinitely the value of $\Delta g$ with $Q^2$. Furthermore, angular momenta must satisfy a helicity sum rule which generally reads
 %%
@@ -873,11 +879,12 @@ Finally, it is possible to give a rough estimate of the gluon helicity. The expe
   \label{eq:J_z_sumrule}
 \end{equation} 
 %%
-where $L_z$ represents the total angular momentum of all partons. Hence, in order for Eq.~\eqref{eq:J_z_sumrule} to be fulfilled, the growing value of $S_{z}^{g}$ has to be compensated by an analogous growth in the magnitude of $L_{z}$. Since a measurement of the orbital momentum of partons is hardly achievable, the only possibility to estimate this contribution is by determining both quarks and gluon contributions from experimental data, providing a reliable accuracy.
-%The goal of this thesis is to provide such estimates, by scrutinizing both the available experimental data and the methodology.
+where $L_z$ represents the total angular momentum of all partons. Hence, in order for Eq.~\eqref{eq:J_z_sumrule} to be fulfilled, the growing value of $S_{z}^{g}$ has to be compensated by an analogous growth in the magnitude of $L_{z}$.%
+
+As I already mentioned in the introduction, a measurement of the orbital momentum of partons is hardly achievable, and the only possibility to estimate this contribution is by determining both quarks and gluon contributions from experimental data, providing a reliable accuracy.
 
 \subsection{Scheme dependence}
-The divergent contributions coming from higher order corrections are regulated by normalisation, which introduces a dependence on the chosen scheme. Despite the fact that the choice is completely arbitrary, it may strongly affect the results and compromise the physical interpretation of certain quantities, as I showed in the section before. Here, I just outline the direct consequences of different schemes, without providing any details. A pedagogical introduction to the scheme dependence may be found in Ref.~\cite{leader_2001} and reference therein. 
+The divergent contributions coming from higher order corrections are regulated by normalisation, which introduces a dependence on the chosen scheme. Despite the fact that the choice is completely arbitrary, it may strongly affect the results and compromise the physical interpretation of certain quantities, as in the case of $\Delta \Sigma$. Here, I just outline the direct consequences of different schemes, without providing any details. A pedagogical introduction to the scheme dependence may be found in Ref.~\cite{leader_2001} and reference therein. 
 \begin{enumerate}
   \item The most frequently used renormalization scheme is the $\overline{\T{MS}}$-scheme, in which the gluon coefficient functions vanish. As a result, there is no gluon contribution to the first moment of the structure function $g_1$. The first moment of the singlet quark distribution, $\Delta \Sigma (Q^2)$, varies with $Q^2$ and any interpretation as the total spin carried by quarks no longer holds. Hence, the singlet axial charge 
   %%
