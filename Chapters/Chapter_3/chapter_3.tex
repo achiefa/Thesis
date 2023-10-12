@@ -304,5 +304,5 @@ The advantages of the Monte Carlo methodology go further. Indeed, the expectatio
 where $O\left[\Delta f_k\right]$ is the value of the observable computed out of the k-th PDF replica. In the same fashion, one can compute uncertainties such as the standard deviation
 %%
 \begin{equation}
-  \sigma_{\mathcal{O}}^2 = \frac{1}{1 - N_{\T{rep}}} \sum_{k=1}^{N_{\T{rep}}} \left( \mathcal{O}[\Delta f^{(k)}] - \left< O\left[ \Delta f \right] \right> \right)^2 \,.
+  \sigma_{\mathcal{O}}^2 = \frac{1}{N_{\T{rep}}-1} \sum_{k=1}^{N_{\T{rep}}} \left( \mathcal{O}[\Delta f^{(k)}] - \left< O\left[ \Delta f \right] \right> \right)^2 \,.
 \end{equation}
