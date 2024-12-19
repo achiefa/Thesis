@@ -12,6 +12,9 @@ if [ -z "$tex_files" ]; then
   exit 0
 fi
 
+# Variable to track if any spelling errors are found
+errors_found=0
+
 # Loop through each .tex file
 for file in $tex_files; do
   echo "Checking spelling for file: $file"
@@ -32,9 +35,18 @@ for file in $tex_files; do
     echo ""
     #hunspell -d en_GB -t -a -l -p dict/words $file
     echo "$hunspellOutput" | tr ' ' '\n' | sort | uniq
-
+    errors_found=1
   else
     echo "Spelling looks good to me in $file"
 
   fi
 done
+
+# Exit with an error if any spelling mistakes were found
+if [ $errors_found -eq 1 ]; then
+  echo "Spelling errors were found in one or more files. Exiting with error."
+  exit 1
+else
+  echo "All .tex files look good. No spelling errors found."
+  exit 0
+fi
