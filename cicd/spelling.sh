@@ -3,14 +3,15 @@
 # Check the spelling of the LaTeX file and fail if there are errors.
 #
 
+echo "CIAO"
 # Find all .tex files in current directory and subdirectories
-tex_files=$(find . -type f -name "*.tex")
-
-# Check if any .tex files are found
-if [ -z "$tex_files" ]; then
-  echo "No .tex files found."
-  exit 0
-fi
+#tex_files=$(find . -type f -name "*.tex")
+#
+## Check if any .tex files are found
+#if [ -z "$tex_files" ]; then
+#  echo "No .tex files found."
+#  exit 0
+#fi
 #echo $(hunspell -D)
 # Loop through each .tex file
 #for file in $tex_files; do
