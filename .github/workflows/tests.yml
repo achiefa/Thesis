@@ -14,7 +14,7 @@ jobs:
       - name: Debug List files
         run: ls -R cicd
       - name: Spell Check
-        run: cicd/spelling.sh
+        run: ./cicd/spelling.sh
         shell: bash --noprofile --norc -eo pipefail -o nounset {0}
     
   build_pdf:
