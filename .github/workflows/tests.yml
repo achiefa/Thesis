@@ -51,7 +51,7 @@ jobs:
   can_create_thumbnail:
     name: Can create thumbnail
     if: ${{ contains(github.event.head_commit.message, '@@thumbnail@@') }}
-    needs: Create PDF
+    needs: build_pdf
     runs-on: ubuntu-latest
     steps:
       - name: Set up Git repository
