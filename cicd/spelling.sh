@@ -11,7 +11,7 @@ if [ -z "$tex_files" ]; then
   echo "No .tex files found."
   exit 0
 fi
-echo $(hunspell -D)
+
 # Loop through each .tex file
 for file in $tex_files; do
   echo "Checking spelling for file: $file"
