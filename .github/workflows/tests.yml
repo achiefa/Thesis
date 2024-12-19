@@ -12,8 +12,8 @@ jobs:
       - name: Install hunspell
         run: sudo apt-get -y install hunspell hunspell-en-gb
       - name: Spell Check
-        shell: bash
-        run: cicd/test.sh
+        shell: bash --noprofile --norc -eo pipefail -o nounset {0}
+        run: bash cicd/spelling.sh
     
   build_pdf:
     name: Create PDF
