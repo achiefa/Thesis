@@ -4,7 +4,7 @@
 #
 
 # Find all .tex files in current directory and subdirectories
-tex_files=$(find . -type f -name "*.tex" ! -name "acknowledgments.tex")
+tex_files=$(find . -type f -name "*.tex" ! -name "acknowledgments.tex" ! -name "title-page.tex")
 
 # Check if any .tex files are found
 if [ -z "$tex_files" ]; then
