@@ -17,7 +17,7 @@ errors_found=0
 
 # Loop through each .tex file
 for file in $tex_files; do
-  echo "Checking spelling for file: $file"
+  echo -e "\nChecking spelling for file: $file"
   # Spell checker with hunspell
   # -d en_GB: British English
   # -t: TeX mode
