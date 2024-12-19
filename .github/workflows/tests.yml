@@ -47,3 +47,26 @@ jobs:
         with:
           name: main.pdf
           path: ./main.pdf
+
+  can_create_thumbnail:
+    name: Can create thumbnail
+    if: ${{ contains(github.event.head_commit.message, '@@thumbnail@@') }}
+    needs: Create PDF
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v4
+      - name: Download Artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: main.pdf
+          path: ./
+      - name: install ghostscript
+        run: sudo apt install ghostscript -y
+      - name: Workaround ghostscript vunerability protection
+        # A vunerabillty that existed in ghostscript no longer exists.  This is to work around the temporary protection
+        # that was put in place.
+        # https://stackoverflow.com/questions/52998331/imagemagick-security-policy-pdf-blocking-conversion
+        run: sudo sed -i 's/rights="none" pattern="PDF"/rights="read | write" pattern="PDF"/' /etc/ImageMagick-6/policy.xml
+      - name: Run convert command 
+        run: convert -density 700 -resize 10% -append -quality 98 -alpha remove main.pdf thesis-thumbnail-p1.jpg
